@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natalie Wilke — Kommunikations- & Markenstrategin</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Natalie Wilke — freiberufliche Kommunikations- und Markenstrategin mit über 10 Jahren Agenturerfahrung. Spezialisiert auf Employer Branding, Content-Strategie und Markenkommunikation.">
+    <meta name="keywords" content="Kommunikationsstrategin, Markenstrategin, Employer Branding, Content-Strategie, Personalmarketing, Freelancerin, Beraterin">
+    <meta name="author" content="Natalie Wilke">
+    <link rel="canonical" href="https://natalie-wilke.de/">
+
+    <!-- Open Graph (LinkedIn, Facebook, WhatsApp previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://natalie-wilke.de/">
+    <meta property="og:title" content="Natalie Wilke — Kommunikations- & Markenstrategin">
+    <meta property="og:description" content="Über 10 Jahre Agenturerfahrung in Employer Branding, Content-Strategie und Markenkommunikation. Verfügbar als Festangestellte, Beraterin oder Freelancerin.">
+    <meta property="og:image" content="https://natalie-wilke.de/img/natalie-bluewall.png">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Natalie Wilke — Kommunikations- & Markenstrategin">
+    <meta name="twitter:description" content="Über 10 Jahre Agenturerfahrung in Employer Branding, Content-Strategie und Markenkommunikation.">
+    <meta name="twitter:image" content="https://natalie-wilke.de/img/natalie-bluewall.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cream: #F5F2EC;
+            --black: #0C0C0C;
+            --blue: #1D38C8;
+            --blue-mid: #4B67E8;
+            --blue-light: #EDF0FF;
+            --gray: #6B6866;
+            --border: #DDD9D2;
+            --nav-h: 72px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--black);
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAVIGATION ─── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-h);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 56px;
+            background: rgba(245, 242, 236, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 19px;
+            letter-spacing: -0.3px;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 44px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 10.5px;
+            font-weight: 500;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0; right: 0;
+            height: 1px;
+            background: var(--blue);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--black); }
+        .nav-links a:hover::after,
+        .nav-links a.active::after { transform: scaleX(1); }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            padding-top: var(--nav-h);
+            display: grid;
+            grid-template-columns: 56% 44%;
+        }
+
+        .hero-left {
+            padding: 80px 56px 80px 56px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-label {
+            font-size: 10.5px;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 36px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .hero-label::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1px;
+            background: var(--blue);
+        }
+
+        .hero-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(52px, 6.5vw, 96px);
+            line-height: 1.0;
+            letter-spacing: -2.5px;
+            color: var(--black);
+            margin-bottom: 40px;
+        }
+
+        .hero-title em,
+        .section-title em {
+            font-style: normal;
+            color: var(--blue);
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--gray);
+            line-height: 1.8;
+            max-width: 420px;
+            margin-bottom: 48px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--black);
+            text-decoration: none;
+            padding-bottom: 6px;
+            border-bottom: 1.5px solid var(--black);
+            width: fit-content;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .hero-cta:hover { color: var(--blue); border-color: var(--blue); }
+
+        .hero-stats {
+            display: flex;
+            gap: 56px;
+            margin-top: 72px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-num {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 40px;
+            line-height: 1;
+            letter-spacing: -1.5px;
+            color: var(--black);
+        }
+
+        .stat-label {
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--gray);
+            letter-spacing: 0.3px;
+            margin-top: 8px;
+            line-height: 1.4;
+            max-width: 100px;
+        }
+
+        .hero-right {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            display: block;
+        }
+
+        /*
+         * PHOTO SETUP:
+         * Place your blue-wall photo at: img/natalie-bluewall.jpg
+         * The blue gradient below is shown as fallback until the image is added.
+         */
+        .hero-photo-fallback {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+            background: linear-gradient(175deg, #3352E2 0%, #1D38C8 35%, #0F2090 70%, #091566 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 48px;
+        }
+
+        .photo-tag {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+        }
+
+        /* ─── LOGO SLIDER ─── */
+        .logos-section {
+            background: var(--black);
+            padding: 26px 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .logos-label {
+            flex-shrink: 0;
+            padding: 0 48px 0 56px;
+            font-size: 9.5px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+            white-space: nowrap;
+            border-right: 1px solid rgba(255,255,255,0.2);
+            margin-right: 56px;
+        }
+
+        .logos-track-wrap {
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .logos-track {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+            animation: logoScroll 28s linear infinite;
+            width: max-content;
+        }
+
+        .logos-track:hover { animation-play-state: paused; }
+
+        .logo-img {
+            height: 26px;
+            width: auto;
+            max-width: 140px;
+            object-fit: contain;
+            flex-shrink: 0;
+            filter: brightness(0) invert(1);
+            opacity: 0.6;
+            transition: opacity 0.25s;
+        }
+
+        .logo-img:hover { opacity: 1; }
+
+        @keyframes logoScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ─── SHARED SECTION STYLES ─── */
+        section {
+            padding: 128px 56px;
+        }
+
+        .section-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .section-eyebrow .num {
+            color: var(--blue);
+            font-family: 'Syne', sans-serif;
+        }
+
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(38px, 4.8vw, 68px);
+            letter-spacing: -2px;
+            line-height: 1.03;
+            margin-bottom: 72px;
+        }
+
+        /* ─── SECTION DIVIDER ─── */
+        .sec-rule {
+            height: 3px;
+            background: var(--black);
+            margin: 0 56px;
+        }
+
+        /* ─── ABOUT ─── */
+        #about {}
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 96px;
+            align-items: start;
+        }
+
+        .about-body p {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: #2A2A2A;
+            margin-bottom: 28px;
+        }
+
+        .about-body p:first-child {
+            font-size: 21px;
+            font-weight: 400;
+            line-height: 1.65;
+            color: var(--black);
+        }
+
+        .about-aside {
+            position: sticky;
+            top: calc(var(--nav-h) + 40px);
+        }
+
+        /*
+         * PHOTO SETUP:
+         * Place your professional/business photo at: img/natalie-professional.jpg
+         */
+        .aside-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .aside-photo-fallback {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: #E4E0D8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+
+        .credentials {
+            margin-top: 28px;
+            border-top: 1px solid var(--border);
+        }
+
+        .credential {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .credential-title {
+            font-size: 12.5px;
+            font-weight: 500;
+            color: var(--black);
+            line-height: 1.3;
+        }
+
+        .credential-sub {
+            font-size: 11.5px;
+            font-weight: 300;
+            color: var(--gray);
+            margin-top: 3px;
+        }
+
+        /* ─── SERVICES ─── */
+        #services {
+            background: #ECEAE3;
+            color: var(--black);
+        }
+
+        #services .section-title { color: var(--black); }
+
+        #services .section-eyebrow {
+            color: var(--gray);
+        }
+
+        #services .section-eyebrow .num { color: var(--blue); }
+
+        .services-grid {
+            display: flex;
+            flex-direction: column;
+            border-top: 2px solid #A8A49C;
+        }
+
+        .service-item {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0 72px;
+            padding: 40px 0;
+            border-bottom: 2px solid #A8A49C;
+            align-items: start;
+            transition: background 0.2s;
+            cursor: default;
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-item:hover {
+            background: transparent;
+        }
+
+        .service-left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 3px;
+        }
+
+        .service-num {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            color: var(--blue);
+            letter-spacing: 2px;
+        }
+
+        .service-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 1.3;
+            letter-spacing: -0.2px;
+            color: var(--black);
+        }
+
+        .service-desc {
+            font-size: 13px;
+            font-weight: 300;
+            color: #555250;
+            line-height: 1.85;
+            padding-top: 3px;
+        }
+
+        /* ─── PROJECT CAROUSEL ─── */
+        .projects-carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-slides {
+            display: flex;
+            transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .project-slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 0 80px;
+            border-top: 2px solid var(--border);
+            align-items: start;
+        }
+
+        .project-left {
+            padding: 52px 0 52px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border);
+            padding-right: 48px;
+            min-height: 420px;
+            justify-content: space-between;
+            gap: 28px;
+        }
+
+        .project-thumb {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .project-slide:hover .project-thumb { filter: grayscale(0%); }
+
+        .project-counter {
+            font-family: 'Syne', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--gray);
+            margin-bottom: 28px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-size: 9.5px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--blue);
+            border: 1px solid rgba(29,56,200,0.3);
+            padding: 4px 10px;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .project-company {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(22px, 2.4vw, 40px);
+            letter-spacing: -1px;
+            line-height: 1.05;
+            color: var(--black);
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            padding-right: 12px;
+        }
+
+        .project-right {
+            padding: 52px 0;
+        }
+
+        .project-block-label {
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .project-about {
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--gray);
+            line-height: 1.75;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-desc {
+            font-size: 15px;
+            font-weight: 300;
+            color: #2A2A2A;
+            line-height: 1.85;
+        }
+
+        .project-desc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .project-desc ul li {
+            display: flex;
+            gap: 14px;
+            align-items: baseline;
+        }
+
+        .project-desc ul li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 18px;
+            height: 1px;
+            background: var(--blue);
+            margin-top: 12px;
+        }
+
+        /* Carousel controls */
+        .project-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 32px 0 0;
+            border-top: 1px solid var(--border);
+            margin-top: 0;
+        }
+
+        .project-dots {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .project-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--border);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.25s, transform 0.25s;
+        }
+
+        .project-dot.active {
+            background: var(--black);
+            transform: scale(1.4);
+        }
+
+        .project-dot:hover:not(.active) { background: var(--gray); }
+
+        .project-arrows {
+            display: flex;
+            gap: 6px;
+        }
+
+        .project-arrow {
+            width: 42px;
+            height: 42px;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            color: var(--black);
+        }
+
+        .project-arrow:hover {
+            border-color: var(--black);
+            background: var(--black);
+            color: white;
+        }
+
+        .project-progress-bar {
+            height: 2px;
+            background: var(--border);
+            margin-top: 16px;
+            overflow: hidden;
+        }
+
+        .project-progress-fill {
+            height: 100%;
+            background: var(--blue);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        @media (max-width: 960px) {
+            .project-slide { grid-template-columns: 1fr; }
+            .project-left { border-right: none; min-height: auto; padding: 40px 0 0; border-bottom: 1px solid var(--border); padding-bottom: 32px; }
+            .project-right { padding: 32px 0 40px; }
+        }
+
+        /* ─── CONTACT ─── */
+        #contact {
+            background: var(--blue);
+            color: white;
+            padding: 128px 56px;
+        }
+
+        #contact .section-eyebrow {
+            color: rgba(255,255,255,0.45);
+        }
+
+        #contact .section-eyebrow .num { color: rgba(255,255,255,0.7); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 96px;
+            align-items: end;
+        }
+
+        .contact-title {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(44px, 5.5vw, 80px);
+            letter-spacing: -2.5px;
+            line-height: 1.0;
+            color: white;
+        }
+
+        .contact-right p {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .contact-email {
+            display: block;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: clamp(18px, 2.2vw, 28px);
+            letter-spacing: -0.3px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            padding-bottom: 10px;
+            width: fit-content;
+            transition: border-color 0.2s;
+            margin-bottom: 14px;
+        }
+
+        .contact-email:hover { border-color: white; }
+
+        .contact-availability {
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.3px;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--black);
+            color: rgba(245,242,236,0.28);
+            padding: 28px 56px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11.5px;
+            letter-spacing: 0.3px;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 960px) {
+            nav { padding: 0 24px; }
+            .nav-links { gap: 24px; }
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-right { height: 55vw; min-height: 320px; order: -1; }
+            .hero-left { padding: 48px 24px 64px; }
+            .hero-stats { gap: 32px; }
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .about-aside { position: static; display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; }
+            .aside-photo, .aside-photo-fallback { aspect-ratio: auto; height: 260px; }
+            .service-item { grid-template-columns: 1fr; gap: 16px; }
+            .sec-rule { margin: 0 24px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+            section { padding: 80px 24px; }
+            #contact { padding: 80px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav>
+    <a href="#home" class="nav-logo">Natalie Wilke</a>
+    <ul class="nav-links">
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#services">Leistungen</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+    </ul>
+</nav>
+
+
+<!-- ─── HERO ─── -->
+<section id="home" style="padding: 0; min-height: 100vh;" class="hero">
+    <div class="hero-left">
+        <p class="hero-label">Kommunikations- & Markenstrategin</p>
+        <h1 class="hero-title">
+            Starke<br>
+            Marken<br>
+            brauchen<br>
+            <em>klare</em> Worte.
+        </h1>
+        <p class="hero-sub">
+            Mit über 10 Jahren Agenturerfahrung entwickle ich Markenkerne,
+            übersetze sie in glaubwürdige Botschaften — und sorge dafür, dass sie wirken.
+        </p>
+        <a href="#contact" class="hero-cta">
+            Projekt besprechen
+            <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <div class="hero-stats">
+            <div>
+                <div class="stat-num">10+</div>
+                <div class="stat-label">Jahre Agentur­erfahrung</div>
+            </div>
+            <div>
+                <div class="stat-num">2</div>
+                <div class="stat-label">eigene Gründungen</div>
+            </div>
+            <div>
+                <div class="stat-num">5</div>
+                <div class="stat-label">IHK-Weiter­bildungen 2025</div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-right">
+        <!--
+            ADD YOUR PHOTO:
+            Copy your blue-wall photo to: img/natalie-bluewall.jpg
+            The blue gradient below is the fallback placeholder.
+        -->
+        <img src="img/natalie-bluewall.png" alt="Natalie Wilke" class="hero-photo"
+             onerror="this.style.display='none'; document.getElementById('hero-fallback').style.display='flex'">
+        <div id="hero-fallback" class="hero-photo-fallback" style="display:none;">
+            <span class="photo-tag">Foto: Natalie Wilke</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── LOGO SLIDER ─── -->
+<div class="logos-section">
+    <div class="logos-label">companies i've worked for (selection)</div>
+    <div class="logos-track-wrap">
+        <!--
+            LOGO SLIDER:
+            Replace the grey pills below with real <img> tags once you have the logos.
+            Each set is duplicated so the animation loops seamlessly.
+        -->
+        <div class="logos-track">
+            <!-- Set 1 -->
+            <img src="img/logos/coca-cola.svg" alt="Coca-Cola" class="logo-img">
+            <img src="img/logos/beam-suntory.svg" alt="Beam Suntory" class="logo-img">
+            <img src="img/logos/lidl.svg" alt="Lidl" class="logo-img" style="height:40px">
+            <img src="img/logos/bonduelle.svg" alt="Bonduelle" class="logo-img">
+            <img src="img/logos/wmf.svg" alt="WMF" class="logo-img">
+            <img src="img/logos/lufthansa-industry-solutions.svg" alt="Lufthansa Industry Solutions" class="logo-img">
+            <img src="img/logos/aurubis.svg" alt="Aurubis" class="logo-img">
+            <img src="img/logos/oetiker.svg?v=2" alt="Oetiker" class="logo-img" style="height:32px">
+            <img src="img/logos/ramboll.svg" alt="Ramboll" class="logo-img">
+            <img src="img/logos/muenchener-verein.svg" alt="Münchener Verein" class="logo-img">
+            <img src="img/logos/diakovere.svg" alt="Diakovere" class="logo-img">
+            <img src="img/logos/leica-geosystems.svg" alt="Leica Geosystems" class="logo-img">
+            <img src="img/logos/ensi.svg" alt="ENSI" class="logo-img">
+            <img src="img/logos/merck.svg" alt="Merck" class="logo-img">
+            <img src="img/logos/elpix.svg" alt="elpix" class="logo-img" style="height:30px">
+            <img src="img/logos/hermes-fulfilment.svg" alt="Hermes Fulfilment" class="logo-img" style="height:34px">
+            <img src="img/logos/pfister.svg" alt="Möbel Pfister" class="logo-img" style="height:28px">
+            <!-- Set 2 (duplicate — keeps the loop seamless) -->
+            <img src="img/logos/coca-cola.svg" alt="Coca-Cola" class="logo-img">
+            <img src="img/logos/beam-suntory.svg" alt="Beam Suntory" class="logo-img">
+            <img src="img/logos/lidl.svg" alt="Lidl" class="logo-img" style="height:40px">
+            <img src="img/logos/bonduelle.svg" alt="Bonduelle" class="logo-img">
+            <img src="img/logos/wmf.svg" alt="WMF" class="logo-img">
+            <img src="img/logos/lufthansa-industry-solutions.svg" alt="Lufthansa Industry Solutions" class="logo-img">
+            <img src="img/logos/aurubis.svg" alt="Aurubis" class="logo-img">
+            <img src="img/logos/oetiker.svg?v=2" alt="Oetiker" class="logo-img" style="height:32px">
+            <img src="img/logos/ramboll.svg" alt="Ramboll" class="logo-img">
+            <img src="img/logos/muenchener-verein.svg" alt="Münchener Verein" class="logo-img">
+            <img src="img/logos/diakovere.svg" alt="Diakovere" class="logo-img">
+            <img src="img/logos/leica-geosystems.svg" alt="Leica Geosystems" class="logo-img">
+            <img src="img/logos/ensi.svg" alt="ENSI" class="logo-img">
+            <img src="img/logos/merck.svg" alt="Merck" class="logo-img">
+            <img src="img/logos/elpix.svg" alt="elpix" class="logo-img" style="height:30px">
+            <img src="img/logos/hermes-fulfilment.svg" alt="Hermes Fulfilment" class="logo-img" style="height:34px">
+            <img src="img/logos/pfister.svg" alt="Möbel Pfister" class="logo-img" style="height:28px">
+        </div>
+    </div>
+</div>
+
+
+<div class="sec-rule"></div>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+    <div class="section-eyebrow"><span class="num">[01]</span> Über mich</div>
+    <h2 class="section-title"><em>Strategie</em> trifft<br>Handwerk.</h2>
+    <div class="about-grid">
+        <div class="about-body">
+            <p>Ich bin Natalie Wilke — Kommunikations-, Content- und Markenstrategin mit über 10 Jahren Agenturerfahrung. In dieser Zeit habe ich Unternehmen unterschiedlichster Branchen dabei geholfen, ihre Stärken auf den Punkt zu bringen: durch klare Positionierungen, wirksame Botschaften und Kommunikation, die wirkt.</p>
+            <p>Meine Basis: ein Masterstudium in Medienwissenschaften, ein Volontariat in der Digitalredaktion der renommierten PR- und Werbeagentur fischerAppelt und rund ein Jahrzehnt auf Agenturseite — von der Junior-Beraterin bis zur Head of Employer Branding &amp; Creative Strategy.</p>
+            <p>Ich denke konzeptionell, schreibe präzise und bringe ein echtes Gespür für Sprache, Zielgruppen und Geschichten mit. Stillstand ist nicht mein Ding: Mit 4DayJobs habe ich seinerzeit Deutschlands erste Jobbörse für die Vier-Tage-Woche mitgegründet. Und mit „Season Within" habe ich eine Female-Health-App komplett eigenständig konzipiert, entwickelt und im Apple App Store gelauncht — vom ersten Entwurf bis zur fertigen App, ohne externes Development-Team.</p>
+            <p>Generative KI begleitet meine Arbeit seit sie verfügbar ist — nicht als Ersatz für handwerkliches Können, sondern als Werkzeug, das ich dort einsetze, wo es Prozesse schärft und Ergebnisse verbessert. Meinen Antrieb, immer weiterzulernen, unterstreichen fünf IHK-Weiterbildungen aus 2025 — in angewandter KI-Transformation, agilem Projektmanagement, Change Management, Datenanalyse und agiler Führung.</p>
+            <p>Ich arbeite am liebsten dort, wo Strategie und Kreativität zusammenkommen — als Festangestellte, Beraterin oder Freelancerin.</p>
+        </div>
+        <div class="about-aside">
+            <!--
+                ADD YOUR PHOTO:
+                Copy your professional/business photo to: img/natalie-professional.jpg
+            -->
+            <img src="img/natalie-professional.jpg" alt="Natalie Wilke" class="aside-photo"
+                 onerror="this.style.display='none'; document.getElementById('aside-fallback').style.display='flex'">
+            <div id="aside-fallback" class="aside-photo-fallback" style="display:none;">Foto</div>
+            <div class="credentials">
+                <div class="credential">
+                    <div class="credential-title">Master Medienwissenschaften</div>
+                    <div class="credential-sub">Hochschule für Bildende Künste Braunschweig</div>
+                </div>
+                <div class="credential">
+                    <div class="credential-title">Volontariat Digitalredaktion</div>
+                    <div class="credential-sub">fischerAppelt</div>
+                </div>
+                <div class="credential">
+                    <div class="credential-title">Head of Employer Branding &amp; Creative Strategy</div>
+                    <div class="credential-sub">Agentur DRSP Group</div>
+                </div>
+                <div class="credential">
+                    <div class="credential-title">5 IHK-Weiterbildungen (2025)</div>
+                    <div class="credential-sub">Angewandte KI-Transformation · Change Management · Datenanalyse · Agile Führung</div>
+                </div>
+                <div class="credential">
+                    <div class="credential-title">Gründerin — Season Within &amp; 4DayJobs</div>
+                    <div class="credential-sub">App &amp; Jobbörse</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="sec-rule"></div>
+
+<!-- ─── SERVICES ─── -->
+<section id="services">
+    <div class="section-eyebrow"><span class="num">[02]</span> Leistungen</div>
+    <h2 class="section-title">Mein <em>Repertoire</em> für<br>Ihre Kommunikation.</h2>
+    <div class="services-grid">
+
+        <div class="service-item">
+            <div class="service-left">
+                <div class="service-num">01</div>
+                <h3 class="service-title">Content-Strategie &amp; Redaktion</h3>
+            </div>
+            <p class="service-desc">Guter Content entsteht nicht durch mehr Worte, sondern durch die richtigen. Ich entwickle Content-Strategien, die auf klaren Zielsetzungen, relevanten Themen und einer durchdachten Kanallogik basieren — und setze sie um. Von der Themenstrategie über Storytelling bis hin zur kanalübergreifenden Distribution: Ich denke an das gewünschte Ergebnis – von der Image-Verbesserung bis zu einer Conversion – und stelle sicher, dass der Inhalt seine spezifische Aufgabe erfüllt. Ob Website, Anzeigen, Social Media, Blog, Intranet, Newsletter oder Unternehmenskommunikation — ich schreibe präzise, in der richtigen Tonalität und mit echtem Gespür dafür, was wirkt.</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-left">
+                <div class="service-num">02</div>
+                <h3 class="service-title">Markenkommunikation &amp; Positionierung</h3>
+            </div>
+            <p class="service-desc">Die stärksten Marken wissen nicht nur, was sie tun, sondern auch warum. Ich entwickle Markenkerne, Claims und Leitideen, die das Wesentliche auf den Punkt bringen — und daraus eine konsistente Kommunikation ableiten, die intern wie extern funktioniert. Das erarbeite ich eng mit meinen Auftraggebenden zusammen. Das Ergebnis: eine Positionierung, die trägt — über alle Kanäle und Zielgruppen hinweg.</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-left">
+                <div class="service-num">03</div>
+                <h3 class="service-title">Employer Branding &amp; Personalmarketing</h3>
+            </div>
+            <p class="service-desc">Gutes Employer Branding beginnt nicht mit einer Kampagne, sondern mit einer ehrlichen Antwort auf die Frage: Wofür stehen wir eigentlich? Ich entwickle Employer-Branding-Strategien und Personalmarketing-Konzepte, die nicht auf Hochglanz setzen, sondern auf Glaubwürdigkeit — von der EVP-Entwicklung über Kampagnenkonzeption bis zur kanalübergreifenden Umsetzung. Mit fast einem Jahrzehnt Erfahrung in der Beratung von Unternehmen unterschiedlichster Branchen und Größen weiß ich, wie Arbeitgebermarken entstehen, die intern gelebt und extern wahrgenommen werden. Das Ergebnis: Arbeitgeberkommunikation, die überzeugt.</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-left">
+                <div class="service-num">04</div>
+                <h3 class="service-title">Beratung &amp; Projektleitung</h3>
+            </div>
+            <p class="service-desc">Eine Strategie ist nur so gut wie ihre Umsetzung. Ich begleite Projekte von der ersten Idee bis zum Launch — strukturiert, lösungsorientiert und mit dem Blick fürs Wesentliche. Mit langjähriger Erfahrung in der Steuerung komplexer Kommunikationsprojekte auf Agenturseite bringe ich sowohl die konzeptionelle Tiefe als auch die operative Verlässlichkeit mit, um anspruchsvolle Projekte zum Erfolg zu führen. Dabei bin ich es gewohnt, mit unterschiedlichen Stakeholdern, Timings und Anforderungen zu jonglieren — ohne dabei den roten Faden zu verlieren. Dabei lege ich Wert auf einen engen Draht zu meinen Auftraggebenden — weil gute Ergebnisse aus gutem Austausch entstehen.</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-left">
+                <div class="service-num">05</div>
+                <h3 class="service-title">PR &amp; Storytelling</h3>
+            </div>
+            <p class="service-desc">Gute Geschichten können vor allem eins: emotional bewegen. Ich entwickle Storylines, Narrative und redaktionelle Konzepte, die eine klare Botschaft transportieren und in Erinnerung bleiben. Meine Basis: ein Masterabschluss in Medienwissenschaften, ein Redaktionsvolontariat in der renommierten PR- und Werbeagentur fischerAppelt und langjährige Erfahrung in der strategischen Kommunikation für Unternehmen unterschiedlichster Branchen. Ob Pressemitteilung, Fachartikel oder Content-Serie — ich finde Geschichten, die es wert sind, erzählt zu werden.</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-left">
+                <div class="service-num">06</div>
+                <h3 class="service-title">Generative KI &amp; digitale Tools</h3>
+            </div>
+            <p class="service-desc">KI verändert, wie Kommunikation entsteht — und wer sie klug einsetzt, hat einen echten Vorsprung. Ich arbeite seit den frühen Tagen generativer KI aktiv mit diesen Tools — in der Konzeption, Texterstellung, Bild-, Video- und Audiogenerierung sowie der Prozessoptimierung. Dabei geht es mir nicht darum, möglichst viel zu automatisieren, sondern das Handwerk durch intelligenten Technologieeinsatz zu ergänzen. Mit einer IHK-Weiterbildung in angewandter KI-Transformation behalte ich den Überblick über die neuesten Entwicklungen — und bringe sowohl strategisches Verständnis als auch operative Erfahrung mit, um KI nachhaltig und sinnvoll zu integrieren.</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-left">
+                <div class="service-num">07</div>
+                <h3 class="service-title">App Development — Season Within</h3>
+            </div>
+            <p class="service-desc">Eine App konzipieren, entwickeln und launchen — ohne Developer-Team oder anderweitige Unterstützung: Das habe ich mit meinem Soloprojekt „Season Within" gemacht. Ich habe die Female-Health-App zum Menstrual Cycle Syncing vollständig eigenständig entwickelt und im Apple App Store gelauncht — von der Produktidee über UX-Konzeption und Design bis zur technischen Umsetzung. „Season Within" zeigt, wie ich arbeite: strategisch, hands-on und mit dem Antrieb, Dinge in die Tat umzusetzen.</p>
+        </div>
+
+        <div class="service-item">
+            <div class="service-left">
+                <div class="service-num">08</div>
+                <h3 class="service-title">Entrepreneurship — 4DayJobs</h3>
+            </div>
+            <p class="service-desc">Die Vier-Tage-Woche nahm vor einigen Jahren deutlich an Fahrt auf. Mit 4DayJobs habe ich gemeinsam mit einem Partner seinerzeit Deutschlands erste Jobbörse speziell für Stellen mit Vier-Tage-Woche gegründet und aufgebaut. Meine Verantwortung lag dabei in jeglichen Bereichen der Unternehmensgründung: von der Strategie über die Umsetzung bis hin zur SEO-Strategie, die damals sehr erfolgreich war und 4DayJobs innerhalb kürzester Zeit auf den Top-Rängen bei Google platzierte. Die Erfahrung, ein Unternehmen von null aufzubauen, hat mein Profil um eine unternehmerische Dimension bereichert, die meine Agenturerfahrung ideal ergänzt.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="sec-rule"></div>
+
+<!-- ─── WORK ─── -->
+<section id="work">
+    <div class="section-eyebrow"><span class="num">[03]</span> Insights &amp; Work</div>
+    <h2 class="section-title">Ausgewählte<br>Projekte.</h2>
+    <div class="projects-carousel" id="projectsCarousel">
+        <div class="project-slides" id="projectSlides">
+
+            <!-- Slide 01 — Ramboll -->
+            <div class="project-slide">
+                <div class="project-left">
+                    <div>
+                        <div class="project-counter">01 / 05</div>
+                        <div class="project-tag">Employer Branding · Fachmesse</div>
+                        <div class="project-company">Ramboll</div>
+                    </div>
+                    <img src="img/projects/ramboll.jpg" alt="Ramboll — InnoTrans" class="project-thumb" style="object-fit: contain; background: #ffffff; padding: 8px;">
+                </div>
+                <div class="project-right">
+                    <div class="project-block-label">Über das Unternehmen</div>
+                    <p class="project-about">Dänische Ingenieur-, Architektur- und Managementberatung — international tätig in den Bereichen Hochbau, Infrastruktur, Energie und Management Consulting.</p>
+                    <div class="project-block-label">Das Projekt (Employer Branding Agenturprojekt)</div>
+                    <div class="project-desc"><ul>
+                        <li>Kurzfristige Employer-Branding-Maßnahmen zur Fachmesse InnoTrans</li>
+                        <li>Entwicklung von LinkedIn- und Social-Media-Visuals sowie Messewerbung</li>
+                        <li>Recruiting-Aktionen zur gezielten Ansprache von Fach- und Führungskräften</li>
+                    </ul></div>
+                </div>
+            </div>
+
+            <!-- Slide 02 — ENSI -->
+            <div class="project-slide">
+                <div class="project-left">
+                    <div>
+                        <div class="project-counter">02 / 05</div>
+                        <div class="project-tag">Employer Branding</div>
+                        <div class="project-company">ENSI</div>
+                    </div>
+                    <img src="img/projects/ensi.jpg" alt="ENSI — Employer Branding" class="project-thumb">
+                </div>
+                <div class="project-right">
+                    <div class="project-block-label">Über das Unternehmen</div>
+                    <p class="project-about">Eidgenössisches Nuklearsicherheitsinspektorat — unabhängige Aufsichtsbehörde des Bundes für die nukleare Sicherheit der Schweizer Kernanlagen.</p>
+                    <div class="project-block-label">Das Projekt (Employer Branding Agenturprojekt)</div>
+                    <div class="project-desc"><ul>
+                        <li>Entwicklung einer prägnanten Employer-Branding-Leitidee</li>
+                        <li>Ganzheitliches Maßnahmenkonzept über alle relevanten Touchpoints</li>
+                        <li>Konsistenter, nachhaltiger Arbeitgeberauftritt</li>
+                    </ul></div>
+                </div>
+            </div>
+
+            <!-- Slide 03 — DIAKOVERE -->
+            <div class="project-slide">
+                <div class="project-left">
+                    <div>
+                        <div class="project-counter">03 / 05</div>
+                        <div class="project-tag">Crossmediale Kampagne</div>
+                        <div class="project-company">Diakovere</div>
+                    </div>
+                    <img src="img/projects/diakovere.jpg" alt="DIAKOVERE — Kampagne" class="project-thumb" style="object-fit: contain; background: #ECEAE3;">
+                </div>
+                <div class="project-right">
+                    <div class="project-block-label">Über das Unternehmen</div>
+                    <p class="project-about">Norddeutschlands größtes frei-gemeinnütziges Unternehmen im Gesundheits- und Sozialbereich mit Sitz in Hannover.</p>
+                    <div class="project-block-label">Das Projekt (Employer Branding Agenturprojekt)</div>
+                    <div class="project-desc"><ul>
+                        <li>Crossmediale Kampagne zur Steigerung der Arbeitgeberbekanntheit</li>
+                        <li>Bewusst mutiger, aufmerksamkeitsstarker Auftritt im umkämpften Gesundheitssektor</li>
+                        <li>Kreative Landingpage mit Schnellbewerbungsoption</li>
+                    </ul></div>
+                </div>
+            </div>
+
+            <!-- Slide 04 — Lufthansa Industry Solutions -->
+            <div class="project-slide">
+                <div class="project-left">
+                    <div>
+                        <div class="project-counter">04 / 05</div>
+                        <div class="project-tag">Recruiting-Kampagne</div>
+                        <div class="project-company">Lufthansa<br>Industry<br>Solutions</div>
+                    </div>
+                    <img src="img/projects/lhind.jpg" alt="Lufthansa Industry Solutions — Recruiting" class="project-thumb">
+                </div>
+                <div class="project-right">
+                    <div class="project-block-label">Über das Unternehmen</div>
+                    <p class="project-about">IT-Dienstleistungsunternehmen und 100%ige Tochter der Lufthansa Group — branchenübergreifend tätig im Bereich digitale Transformation.</p>
+                    <div class="project-block-label">Das Projekt (Employer Branding Agenturprojekt)</div>
+                    <div class="project-desc"><ul>
+                        <li>Recruiting-Kampagne mit Fokus auf KI, Big Data, Cloud und IT-Security</li>
+                        <li>Positionierung als führender Arbeitgeber in der Technologiebranche</li>
+                        <li>Gezielte Ansprache qualifizierter IT-Fachkräfte</li>
+                    </ul></div>
+                </div>
+            </div>
+
+            <!-- Slide 05 — Leica Geosystems -->
+            <div class="project-slide">
+                <div class="project-left">
+                    <div>
+                        <div class="project-counter">05 / 05</div>
+                        <div class="project-tag">Employer Branding · Stellenanzeigen</div>
+                        <div class="project-company">Leica<br>Geosystems</div>
+                    </div>
+                    <img src="img/projects/leica.jpg" alt="Leica Geosystems — Stellenanzeigen" class="project-thumb" style="object-position: center top;">
+                </div>
+                <div class="project-right">
+                    <div class="project-block-label">Über das Unternehmen</div>
+                    <p class="project-about">Hexagon-Tochter mit Sitz in der Schweiz — Hersteller hochpräziser Messinstrumente für Bauvermessung, Geodäsie und Photogrammetrie.</p>
+                    <div class="project-block-label">Das Projekt (Employer Branding Agenturprojekt)</div>
+                    <div class="project-desc"><ul>
+                        <li>Entwicklung und Gestaltung von Stellenanzeigen-Layouts</li>
+                        <li>Konsequente Umsetzung der Corporate Identity</li>
+                        <li>Hochwertige, konsistente Darstellung der Arbeitgebermarke</li>
+                    </ul></div>
+                </div>
+            </div>
+
+        </div><!-- /project-slides -->
+
+        <div class="project-controls">
+            <div class="project-dots" id="projectDots">
+                <button class="project-dot active" aria-label="Projekt 1"></button>
+                <button class="project-dot" aria-label="Projekt 2"></button>
+                <button class="project-dot" aria-label="Projekt 3"></button>
+                <button class="project-dot" aria-label="Projekt 4"></button>
+                <button class="project-dot" aria-label="Projekt 5"></button>
+            </div>
+            <div class="project-arrows">
+                <button class="project-arrow" id="projPrev" aria-label="Vorheriges Projekt">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 18 18">
+                        <path d="M11 4l-5 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="project-arrow" id="projNext" aria-label="Nächstes Projekt">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 18 18">
+                        <path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="project-progress-bar">
+            <div class="project-progress-fill" id="projectProgressFill"></div>
+        </div>
+
+    </div><!-- /projects-carousel -->
+</section>
+
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+    <div class="section-eyebrow"><span class="num">[04]</span> Kontakt</div>
+    <div class="contact-grid">
+        <div>
+            <h2 class="contact-title">Lassen Sie<br>uns sprechen.</h2>
+        </div>
+        <div class="contact-right">
+            <p>Sie haben ein Projekt, eine Idee oder einfach eine Frage? Ich freue mich über den Austausch — ganz gleich, ob es um eine konkrete Zusammenarbeit geht oder erst einmal um ein Kennenlernen.</p>
+            <a href="mailto:wilke.natalie@gmail.com" class="contact-email">wilke.natalie@gmail.com</a>
+            <p class="contact-availability">Verfügbar als Festangestellte, Beraterin oder Freelancerin.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <span>© 2026 Natalie Wilke</span>
+    <span>Kommunikations- &amp; Markenstrategin</span>
+</footer>
+
+
+<script>
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                navLinks.forEach(a => {
+                    a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+                });
+            }
+        });
+    }, { threshold: 0.25, rootMargin: '-10% 0px -10% 0px' });
+
+    sections.forEach(s => io.observe(s));
+
+    // ─── Project Carousel ───
+    (function () {
+        const track = document.getElementById('projectSlides');
+        const dots = document.querySelectorAll('#projectDots .project-dot');
+        const prevBtn = document.getElementById('projPrev');
+        const nextBtn = document.getElementById('projNext');
+        const fill = document.getElementById('projectProgressFill');
+        const carousel = document.getElementById('projectsCarousel');
+        const TOTAL = 5;
+        const INTERVAL = 6500;
+        let current = 0;
+        let rafId = null;
+        let startTime = null;
+        let paused = false;
+
+        function goTo(n) {
+            current = ((n % TOTAL) + TOTAL) % TOTAL;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            resetProgress();
+        }
+
+        function resetProgress() {
+            startTime = null;
+            fill.style.transition = 'none';
+            fill.style.width = '0%';
+            if (rafId) cancelAnimationFrame(rafId);
+            if (!paused) animate(null);
+        }
+
+        function animate(ts) {
+            if (!startTime) startTime = ts;
+            const elapsed = ts - startTime;
+            const pct = Math.min(elapsed / INTERVAL * 100, 100);
+            fill.style.transition = 'none';
+            fill.style.width = pct + '%';
+            if (elapsed >= INTERVAL) {
+                goTo(current + 1);
+                return;
+            }
+            rafId = requestAnimationFrame(animate);
+        }
+
+        prevBtn.addEventListener('click', () => goTo(current - 1));
+        nextBtn.addEventListener('click', () => goTo(current + 1));
+        dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+        carousel.addEventListener('mouseenter', () => {
+            paused = true;
+            if (rafId) cancelAnimationFrame(rafId);
+        });
+        carousel.addEventListener('mouseleave', () => {
+            paused = false;
+            startTime = null;
+            animate(performance.now());
+        });
+
+        // Kick off
+        dots[0].classList.add('active');
+        requestAnimationFrame(animate);
+    })();
+</script>
+
+</body>
+</html>
