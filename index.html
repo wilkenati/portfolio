@@ -442,17 +442,16 @@
         .services-grid {
             display: flex;
             flex-direction: column;
-            border-top: 2px solid #A8A49C;
+            border-top: 1px solid #A8A49C;
         }
 
         .service-item {
             display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 0 72px;
-            padding: 40px 0;
-            border-bottom: 2px solid #A8A49C;
+            grid-template-columns: 1fr 1.65fr;
+            gap: 0 48px;
+            padding: 36px 0;
+            border-bottom: 1px solid #A8A49C;
             align-items: start;
-            transition: background 0.2s;
             cursor: default;
         }
 
@@ -460,40 +459,59 @@
             border-bottom: none;
         }
 
-        .service-item:hover {
-            background: transparent;
-        }
-
         .service-left {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            padding-top: 3px;
+            align-self: start;
         }
 
         .service-num {
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            font-size: 11px;
-            color: var(--blue);
-            letter-spacing: 2px;
+            font-family: inherit;
+            font-weight: 900;
+            font-size: 72px;
+            line-height: 0.85;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--blue);
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            user-select: none;
         }
 
         .service-title {
             font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            font-size: 17px;
-            line-height: 1.3;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 1.2;
             letter-spacing: -0.2px;
             color: var(--black);
         }
 
         .service-desc {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 300;
             color: #555250;
-            line-height: 1.85;
-            padding-top: 3px;
+            line-height: 1.8;
+            margin-top: 0;
+            align-self: start;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .service-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 10.5px;
+            font-weight: 400;
+            color: var(--gray);
+            letter-spacing: 0.3px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 4px 12px;
+            white-space: nowrap;
         }
 
         /* ─── PROJECT CAROUSEL ─── */
@@ -539,6 +557,25 @@
         }
 
         .project-slide:hover .project-thumb { filter: grayscale(0%); }
+
+        .project-thumb-pair {
+            width: 100%;
+            aspect-ratio: 4/3;
+            display: flex;
+            gap: 4px;
+            overflow: hidden;
+        }
+
+        .project-thumb-half {
+            flex: 1;
+            min-width: 0;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .project-slide:hover .project-thumb-half { filter: grayscale(0%); }
 
         .project-counter {
             font-family: 'Syne', sans-serif;
@@ -707,6 +744,54 @@
             .project-right { padding: 32px 0 40px; }
         }
 
+        /* ─── FAQ ─── */
+        .faq-list {
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-list details {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-list details summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 24px 0;
+            cursor: pointer;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 1.4;
+            color: var(--black);
+            gap: 32px;
+        }
+
+        .faq-list details summary::-webkit-details-marker { display: none; }
+
+        .faq-indicator {
+            font-size: 22px;
+            font-weight: 300;
+            color: var(--blue);
+            flex-shrink: 0;
+            line-height: 1.4;
+        }
+
+        .faq-plus { display: inline; }
+        .faq-minus { display: none; }
+        .faq-list details[open] .faq-plus { display: none; }
+        .faq-list details[open] .faq-minus { display: inline; }
+
+        .faq-answer {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--gray);
+            line-height: 1.85;
+            padding-bottom: 28px;
+            max-width: 720px;
+        }
+
         /* ─── CONTACT ─── */
         #contact {
             background: var(--blue);
@@ -768,6 +853,99 @@
             letter-spacing: 0.3px;
         }
 
+        /* ─── ANGEBOTE ─── */
+        #angebote {
+            background: var(--cream);
+        }
+
+        .angebote-sub {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--gray);
+            margin-top: -52px;
+            margin-bottom: 56px;
+        }
+
+        .angebote-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .angebot-card {
+            background: var(--cream);
+            padding: 28px 28px 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .angebot-cat {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .angebot-name {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 17px;
+            line-height: 1.25;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .angebot-rule {
+            width: 20px;
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 14px;
+        }
+
+        .angebot-desc {
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--gray);
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .angebot-foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+
+        .angebot-price {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            color: var(--blue);
+        }
+
+        .angebot-cta {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .angebot-cta:hover { text-decoration: underline; }
+
+        @media (max-width: 960px) {
+            .angebote-grid { grid-template-columns: 1fr; }
+        }
+
         /* ─── FOOTER ─── */
         footer {
             background: var(--black);
@@ -807,7 +985,9 @@
     <ul class="nav-links">
         <li><a href="#about">Über mich</a></li>
         <li><a href="#services">Leistungen</a></li>
+        <li><a href="#angebote">Angebote</a></li>
         <li><a href="#work">Work</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Kontakt</a></li>
     </ul>
 </nav>
@@ -977,6 +1157,11 @@
                 <h3 class="service-title">Content-Strategie &amp; Redaktion</h3>
             </div>
             <p class="service-desc">Guter Content entsteht nicht durch mehr Worte, sondern durch die richtigen. Ich entwickle Content-Strategien, die auf klaren Zielsetzungen, relevanten Themen und einer durchdachten Kanallogik basieren — und setze sie um. Von der Themenstrategie über Storytelling bis hin zur kanalübergreifenden Distribution: Ich denke an das gewünschte Ergebnis – von der Image-Verbesserung bis zu einer Conversion – und stelle sicher, dass der Inhalt seine spezifische Aufgabe erfüllt. Ob Website, Anzeigen, Social Media, Blog, Intranet, Newsletter oder Unternehmenskommunikation — ich schreibe präzise, in der richtigen Tonalität und mit echtem Gespür dafür, was wirkt.</p>
+            <div class="service-tags">
+                <span class="service-tag">Texterstellung</span>
+                <span class="service-tag">Social-Media-Content</span>
+                <span class="service-tag">Unternehmenskommunikation</span>
+            </div>
         </div>
 
         <div class="service-item">
@@ -985,6 +1170,11 @@
                 <h3 class="service-title">Markenkommunikation &amp; Positionierung</h3>
             </div>
             <p class="service-desc">Die stärksten Marken wissen nicht nur, was sie tun, sondern auch warum. Ich entwickle Markenkerne, Claims und Leitideen, die das Wesentliche auf den Punkt bringen — und daraus eine konsistente Kommunikation ableiten, die intern wie extern funktioniert. Das erarbeite ich eng mit meinen Auftraggebenden zusammen. Das Ergebnis: eine Positionierung, die trägt — über alle Kanäle und Zielgruppen hinweg.</p>
+            <div class="service-tags">
+                <span class="service-tag">Markenstrategie</span>
+                <span class="service-tag">Claim-Entwicklung</span>
+                <span class="service-tag">Brand Messaging</span>
+            </div>
         </div>
 
         <div class="service-item">
@@ -993,46 +1183,168 @@
                 <h3 class="service-title">Employer Branding &amp; Personalmarketing</h3>
             </div>
             <p class="service-desc">Gutes Employer Branding beginnt nicht mit einer Kampagne, sondern mit einer ehrlichen Antwort auf die Frage: Wofür stehen wir eigentlich? Ich entwickle Employer-Branding-Strategien und Personalmarketing-Konzepte, die nicht auf Hochglanz setzen, sondern auf Glaubwürdigkeit — von der EVP-Entwicklung über Kampagnenkonzeption bis zur kanalübergreifenden Umsetzung. Mit fast einem Jahrzehnt Erfahrung in der Beratung von Unternehmen unterschiedlichster Branchen und Größen weiß ich, wie Arbeitgebermarken entstehen, die intern gelebt und extern wahrgenommen werden. Das Ergebnis: Arbeitgeberkommunikation, die überzeugt.</p>
+            <div class="service-tags">
+                <span class="service-tag">Employer-Branding-Analysen</span>
+                <span class="service-tag">EVP-Entwicklung</span>
+                <span class="service-tag">Karriereseiten</span>
+            </div>
         </div>
 
         <div class="service-item">
             <div class="service-left">
                 <div class="service-num">04</div>
-                <h3 class="service-title">Beratung &amp; Projektleitung</h3>
+                <h3 class="service-title">Kommunikationsberatung &amp; Projektleitung</h3>
             </div>
             <p class="service-desc">Eine Strategie ist nur so gut wie ihre Umsetzung. Ich begleite Projekte von der ersten Idee bis zum Launch — strukturiert, lösungsorientiert und mit dem Blick fürs Wesentliche. Mit langjähriger Erfahrung in der Steuerung komplexer Kommunikationsprojekte auf Agenturseite bringe ich sowohl die konzeptionelle Tiefe als auch die operative Verlässlichkeit mit, um anspruchsvolle Projekte zum Erfolg zu führen. Dabei bin ich es gewohnt, mit unterschiedlichen Stakeholdern, Timings und Anforderungen zu jonglieren — ohne dabei den roten Faden zu verlieren. Dabei lege ich Wert auf einen engen Draht zu meinen Auftraggebenden — weil gute Ergebnisse aus gutem Austausch entstehen.</p>
+            <div class="service-tags">
+                <span class="service-tag">Kommunikationsberatung</span>
+                <span class="service-tag">Projektsteuerung</span>
+                <span class="service-tag">Stakeholder Management</span>
+            </div>
         </div>
 
         <div class="service-item">
             <div class="service-left">
                 <div class="service-num">05</div>
-                <h3 class="service-title">PR &amp; Storytelling</h3>
+                <h3 class="service-title">PR, Storytelling &amp; Personal Branding</h3>
             </div>
-            <p class="service-desc">Gute Geschichten können vor allem eins: emotional bewegen. Ich entwickle Storylines, Narrative und redaktionelle Konzepte, die eine klare Botschaft transportieren und in Erinnerung bleiben. Meine Basis: ein Masterabschluss in Medienwissenschaften, ein Redaktionsvolontariat in der renommierten PR- und Werbeagentur fischerAppelt und langjährige Erfahrung in der strategischen Kommunikation für Unternehmen unterschiedlichster Branchen. Ob Pressemitteilung, Fachartikel oder Content-Serie — ich finde Geschichten, die es wert sind, erzählt zu werden.</p>
+            <p class="service-desc">Gute Geschichten können vor allem eins: emotional bewegen. Ich entwickle Storylines, Narrative und redaktionelle Konzepte — ob Pressemitteilung, Fachartikel oder Content-Serie. Das gilt auch für Personal Brands. Ich unterstütze bspw. Führungskräfte und Selbstständige dabei, ihre Expertise sichtbar zu machen — mit klarer Positionierung, konsistenter Kommunikation und Inhalten, die ihre Stimme tragen. Dafür bringe ich u. a. langjährige Erfahrung in der strategischen Kommunikation, ein Redaktionsvolontariat bei der renommierten Agentur fischerAppelt und einen Masterabschluss in Medienwissenschaften mit. Ob Ghostwriting für LinkedIn oder strategische Thought-Leadership-Begleitung: Sichtbarkeit entsteht durch den richtigen Content.</p>
+            <div class="service-tags">
+                <span class="service-tag">Pressemitteilungen</span>
+                <span class="service-tag">LinkedIn-Content</span>
+                <span class="service-tag">Ghostwriting</span>
+            </div>
         </div>
 
         <div class="service-item">
             <div class="service-left">
                 <div class="service-num">06</div>
-                <h3 class="service-title">Generative KI &amp; digitale Tools</h3>
+                <h3 class="service-title">Social Media &amp; (KI)-Content-Produktion</h3>
             </div>
-            <p class="service-desc">KI verändert, wie Kommunikation entsteht — und wer sie klug einsetzt, hat einen echten Vorsprung. Ich arbeite seit den frühen Tagen generativer KI aktiv mit diesen Tools — in der Konzeption, Texterstellung, Bild-, Video- und Audiogenerierung sowie der Prozessoptimierung. Dabei geht es mir nicht darum, möglichst viel zu automatisieren, sondern das Handwerk durch intelligenten Technologieeinsatz zu ergänzen. Mit einer IHK-Weiterbildung in angewandter KI-Transformation behalte ich den Überblick über die neuesten Entwicklungen — und bringe sowohl strategisches Verständnis als auch operative Erfahrung mit, um KI nachhaltig und sinnvoll zu integrieren.</p>
+            <p class="service-desc">Guter Social-Media-Content folgt keiner allgemeingültigen Zauberformel, aber echter Mehrwert für die Zielgruppe, Emotionalität und Anreize zur Interaktion sind häufig der Schlüssel zum Erfolg. Ich entwickle Social-Media-Konzepte und Inhalte für LinkedIn, Instagram, TikTok und weitere Kanäle: von der Ideenfindung und Contentplanung bis zur fertigen Umsetzung. Meine Bandbreite reicht von professioneller C-Level- und Unternehmenskommunikation auf LinkedIn bis zu KI-generiertem Fashion- und Lifestyle-Content für Instagram und TikTok — on-brand und plattformgerecht. Generative KI setze ich gezielt dort ein, wo sie Mehrwert schafft und ihr Einsatz gewünscht ist – bspw. zur Beschleunigung der Produktion, ohne dabei die Markenidentität zu verlieren.</p>
+            <div class="service-tags">
+                <span class="service-tag">Social-Media-Marketing</span>
+                <span class="service-tag">KI-Content</span>
+                <span class="service-tag">AI Creator</span>
+            </div>
         </div>
 
         <div class="service-item">
             <div class="service-left">
                 <div class="service-num">07</div>
-                <h3 class="service-title">App Development — Season Within</h3>
+                <h3 class="service-title">Generative KI für Kommunikation &amp; Content</h3>
             </div>
-            <p class="service-desc">Eine App konzipieren, entwickeln und launchen — ohne Developer-Team oder anderweitige Unterstützung: Das habe ich mit meinem Soloprojekt „Season Within" gemacht. Ich habe die Female-Health-App zum Menstrual Cycle Syncing vollständig eigenständig entwickelt und im Apple App Store gelauncht — von der Produktidee über UX-Konzeption und Design bis zur technischen Umsetzung. „Season Within" zeigt, wie ich arbeite: strategisch, hands-on und mit dem Antrieb, Dinge in die Tat umzusetzen.</p>
+            <p class="service-desc">KI verändert, wie Kommunikation entsteht — und wer sie klug einsetzt, hat einen echten Vorsprung. Ich arbeite seit den frühen Tagen generativer KI aktiv mit diesen Tools — in der Konzeption, Texterstellung, Bild-, Video- und Audiogenerierung sowie der Prozessoptimierung. Dabei geht es mir nicht darum, möglichst viel zu automatisieren, sondern das Handwerk durch intelligenten Technologieeinsatz zu ergänzen. Mit einer IHK-Weiterbildung in angewandter KI-Transformation behalte ich den Überblick über die neuesten Entwicklungen — und bringe sowohl strategisches Verständnis als auch operative Erfahrung mit, um KI nachhaltig und sinnvoll zu integrieren.</p>
+            <div class="service-tags">
+                <span class="service-tag">Prompt Engineering</span>
+                <span class="service-tag">KI-Content-Generierungen</span>
+                <span class="service-tag">KI-Strategie</span>
+            </div>
         </div>
 
         <div class="service-item">
             <div class="service-left">
                 <div class="service-num">08</div>
+                <h3 class="service-title">App Development — Season Within</h3>
+            </div>
+            <p class="service-desc">Eine App konzipieren, entwickeln und launchen — ohne Developer-Team oder anderweitige Unterstützung: Das habe ich mit meinem Soloprojekt „Season Within" gemacht. Ich habe die Female-Health-App zum Menstrual Cycle Syncing vollständig eigenständig entwickelt und im Apple App Store gelauncht — von der Produktidee über UX-Konzeption und Design bis zur technischen Umsetzung. „Season Within" zeigt, wie ich arbeite: strategisch, hands-on und mit dem Antrieb, Dinge in die Tat umzusetzen.</p>
+            <div class="service-tags">
+                <span class="service-tag">UX-Konzeption</span>
+                <span class="service-tag">No-Code Development</span>
+                <span class="service-tag">Product Design</span>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="service-left">
+                <div class="service-num">09</div>
                 <h3 class="service-title">Entrepreneurship — 4DayJobs</h3>
             </div>
             <p class="service-desc">Die Vier-Tage-Woche nahm vor einigen Jahren deutlich an Fahrt auf. Mit 4DayJobs habe ich gemeinsam mit einem Partner seinerzeit Deutschlands erste Jobbörse speziell für Stellen mit Vier-Tage-Woche gegründet und aufgebaut. Meine Verantwortung lag dabei in jeglichen Bereichen der Unternehmensgründung: von der Strategie über die Umsetzung bis hin zur SEO-Strategie, die damals sehr erfolgreich war und 4DayJobs innerhalb kürzester Zeit auf den Top-Rängen bei Google platzierte. Die Erfahrung, ein Unternehmen von null aufzubauen, hat mein Profil um eine unternehmerische Dimension bereichert, die meine Agenturerfahrung ideal ergänzt.</p>
+            <div class="service-tags">
+                <span class="service-tag">SEO-Strategie</span>
+                <span class="service-tag">New Work</span>
+                <span class="service-tag">Jobbörse</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="sec-rule"></div>
+
+<!-- ─── ANGEBOTE ─── -->
+<section id="angebote">
+    <div class="section-eyebrow"><span class="num">[03]</span> Preise</div>
+    <h2 class="section-title">Meine Einstiegs­angebote.</h2>
+    <p class="angebote-sub">Fester Preis. Schneller Start. Klares Ergebnis.</p>
+    <div class="angebote-grid">
+
+        <div class="angebot-card">
+            <div class="angebot-cat">Personal Branding</div>
+            <div class="angebot-name">LinkedIn-Profil-Check &amp; Sparring</div>
+            <div class="angebot-rule"></div>
+            <p class="angebot-desc">Profil-Analyse, Empfehlungen und Rewrite — inkl. 30-minütigem Sparring-Call.</p>
+            <div class="angebot-foot">
+                <span class="angebot-price">290 €</span>
+                <a href="#contact" class="angebot-cta">Anfragen →</a>
+            </div>
+        </div>
+
+        <div class="angebot-card">
+            <div class="angebot-cat">Employer Branding</div>
+            <div class="angebot-name">Stellenanzeigen-Audit</div>
+            <div class="angebot-rule"></div>
+            <p class="angebot-desc">Analyse von bis zu 5 Stellenanzeigen mit schriftlichen Optimierungsvorschlägen zu Sprache, Struktur und Zielgruppenansprache.</p>
+            <div class="angebot-foot">
+                <span class="angebot-price">390 €</span>
+                <a href="#contact" class="angebot-cta">Anfragen →</a>
+            </div>
+        </div>
+
+        <div class="angebot-card">
+            <div class="angebot-cat">Content</div>
+            <div class="angebot-name">LinkedIn Ghostwriting-Paket</div>
+            <div class="angebot-rule"></div>
+            <p class="angebot-desc">3 fertige LinkedIn-Posts inkl. 30-minütigem Strategie-Call zur Themenfindung und 30-minütiger Abstimmungsrunde. Verlängerbar als Retainer.</p>
+            <div class="angebot-foot">
+                <span class="angebot-price">490 €</span>
+                <a href="#contact" class="angebot-cta">Anfragen →</a>
+            </div>
+        </div>
+
+        <div class="angebot-card">
+            <div class="angebot-cat">Content-Strategie</div>
+            <div class="angebot-name">Content-Strategie-Sparring</div>
+            <div class="angebot-rule"></div>
+            <p class="angebot-desc">Kurzanalyse bestehender Inhalte und Kanäle, schriftliche Handlungsempfehlung inkl. 30-minütigem Call im Nachgang.</p>
+            <div class="angebot-foot">
+                <span class="angebot-price">490 €</span>
+                <a href="#contact" class="angebot-cta">Anfragen →</a>
+            </div>
+        </div>
+
+        <div class="angebot-card">
+            <div class="angebot-cat">Employer Branding</div>
+            <div class="angebot-name">Employer-Branding-Analyse</div>
+            <div class="angebot-rule"></div>
+            <p class="angebot-desc">Schriftliche Bestandsaufnahme und Handlungsempfehlungen. Optional: Wettbewerbsanalyse von bis zu 2 Mitbewerbern auf Anfrage.</p>
+            <div class="angebot-foot">
+                <span class="angebot-price">790 €</span>
+                <a href="#contact" class="angebot-cta">Anfragen →</a>
+            </div>
+        </div>
+
+        <div class="angebot-card">
+            <div class="angebot-cat">Employer Branding</div>
+            <div class="angebot-name">EVP-Workshop für KMU und Start-ups</div>
+            <div class="angebot-rule"></div>
+            <p class="angebot-desc">Eintägige Entwicklung einer ausformulierten Arbeitgeberpositionierung — vor Ort oder remote.</p>
+            <div class="angebot-foot">
+                <span class="angebot-price">2.400 €</span>
+                <a href="#contact" class="angebot-cta">Anfragen →</a>
+            </div>
         </div>
 
     </div>
@@ -1043,7 +1355,7 @@
 
 <!-- ─── WORK ─── -->
 <section id="work">
-    <div class="section-eyebrow"><span class="num">[03]</span> Insights &amp; Work</div>
+    <div class="section-eyebrow"><span class="num">[04]</span> Insights &amp; Work</div>
     <h2 class="section-title">Ausgewählte<br>Projekte.</h2>
     <div class="projects-carousel" id="projectsCarousel">
         <div class="project-slides" id="projectSlides">
@@ -1052,7 +1364,7 @@
             <div class="project-slide">
                 <div class="project-left">
                     <div>
-                        <div class="project-counter">01 / 05</div>
+                        <div class="project-counter">01 / 07</div>
                         <div class="project-tag">Employer Branding · Fachmesse</div>
                         <div class="project-company">Ramboll</div>
                     </div>
@@ -1074,7 +1386,7 @@
             <div class="project-slide">
                 <div class="project-left">
                     <div>
-                        <div class="project-counter">02 / 05</div>
+                        <div class="project-counter">02 / 07</div>
                         <div class="project-tag">Employer Branding</div>
                         <div class="project-company">ENSI</div>
                     </div>
@@ -1096,7 +1408,7 @@
             <div class="project-slide">
                 <div class="project-left">
                     <div>
-                        <div class="project-counter">03 / 05</div>
+                        <div class="project-counter">03 / 07</div>
                         <div class="project-tag">Crossmediale Kampagne</div>
                         <div class="project-company">Diakovere</div>
                     </div>
@@ -1118,7 +1430,7 @@
             <div class="project-slide">
                 <div class="project-left">
                     <div>
-                        <div class="project-counter">04 / 05</div>
+                        <div class="project-counter">04 / 07</div>
                         <div class="project-tag">Recruiting-Kampagne</div>
                         <div class="project-company">Lufthansa<br>Industry<br>Solutions</div>
                     </div>
@@ -1140,7 +1452,7 @@
             <div class="project-slide">
                 <div class="project-left">
                     <div>
-                        <div class="project-counter">05 / 05</div>
+                        <div class="project-counter">05 / 07</div>
                         <div class="project-tag">Employer Branding · Stellenanzeigen</div>
                         <div class="project-company">Leica<br>Geosystems</div>
                     </div>
@@ -1158,6 +1470,58 @@
                 </div>
             </div>
 
+
+            <!-- Slide 06 — AI Fashion Content Creation -->
+            <div class="project-slide">
+                <div class="project-left">
+                    <div>
+                        <div class="project-counter">06 / 07</div>
+                        <div class="project-tag">KI-gestützte Content-Kreation</div>
+                        <div class="project-company">AI Fashion<br>Content<br>Creation</div>
+                    </div>
+                    <div class="project-thumb-pair" style="aspect-ratio: 3/4;">
+                        <img src="img/projects/ai-fashion-1.jpg?v=3" alt="AI Fashion — Virtual Persona" class="project-thumb-half" style="object-position: center top;">
+                        <img src="img/projects/ai-fashion-2.jpg" alt="AI Fashion — Content" class="project-thumb-half" style="object-position: center 15%;">
+                    </div>
+                </div>
+                <div class="project-right">
+                    <div class="project-block-label">Hintergrund</div>
+                    <p class="project-about">Eigenes Projekt zum Erlernen und Erproben KI-gestützter Content-Produktion und zum Aufbau einer virtuellen Influencer-Präsenz auf Instagram.</p>
+                    <div class="project-block-label">Das Projekt</div>
+                    <div class="project-desc"><ul>
+                        <li>Konzeption und Entwicklung einer virtuellen KI-Persona mit stabiler visueller Identität und durchgängiger Charakterkonsistenz</li>
+                        <li>Prompt Engineering für konsistente Bildsprache und Markenwirkung über alle Kreationen hinweg</li>
+                        <li>Bild- und Videoproduktion mit generativen KI-Tools (Veo 3.1, Nano Banana Pro u. a.)</li>
+                        <li>Strategischer Kanalaufbau auf Instagram: über 1.000 Follower organisch aufgebaut</li>
+                    </ul></div>
+                </div>
+            </div>
+
+            <!-- Slide 07 — Season Within -->
+            <div class="project-slide">
+                <div class="project-left">
+                    <div>
+                        <div class="project-counter">07 / 07</div>
+                        <div class="project-tag">iOS App</div>
+                        <div class="project-company">Season<br>Within</div>
+                    </div>
+                    <div class="project-thumb-pair">
+                        <img src="img/projects/season-within-1.png" alt="Season Within — App" class="project-thumb-half" style="object-fit: contain; background: #3d1a54;">
+                        <img src="img/projects/season-within-2.png" alt="Season Within — Kalender" class="project-thumb-half" style="object-fit: contain; background: #c4a99a;">
+                    </div>
+                </div>
+                <div class="project-right">
+                    <div class="project-block-label">Hintergrund</div>
+                    <p class="project-about">Eigenentwickelte Female-Health-App zum Menstrual Cycle Syncing — vollständig als Soloprojekt konzipiert, designed und im Apple App Store gelauncht.</p>
+                    <div class="project-block-label">Das Projekt</div>
+                    <div class="project-desc"><ul>
+                        <li>Entwicklung einer iOS-App, die Menstruierenden hilft, Ernährung, Bewegung und Wohlbefinden an ihre Zyklusphase anzupassen</li>
+                        <li>Tägliche Tipps, Rezepte und Affirmationen — individuell abgestimmt auf die vier Zyklusphasen</li>
+                        <li>Produktstrategie, UX-Konzeption, Design und technische Umsetzung als Soloprojekt — von der ersten Idee bis zum Launch im Apple App Store</li>
+                    </ul></div>
+                </div>
+            </div>
+
         </div><!-- /project-slides -->
 
         <div class="project-controls">
@@ -1167,6 +1531,8 @@
                 <button class="project-dot" aria-label="Projekt 3"></button>
                 <button class="project-dot" aria-label="Projekt 4"></button>
                 <button class="project-dot" aria-label="Projekt 5"></button>
+                <button class="project-dot" aria-label="Projekt 6"></button>
+                <button class="project-dot" aria-label="Projekt 7"></button>
             </div>
             <div class="project-arrows">
                 <button class="project-arrow" id="projPrev" aria-label="Vorheriges Projekt">
@@ -1189,9 +1555,161 @@
 </section>
 
 
+<!-- ─── FAQ ─── -->
+<section id="faq">
+    <div class="section-eyebrow"><span class="num">[05]</span> FAQ</div>
+    <h2 class="section-title">Häufige Fragen.</h2>
+    <div class="faq-list">
+
+        <details open>
+            <summary><span>Kann ich auch als KMU oder Start-up mit begrenztem Budget meine Arbeitgebermarke aufbauen?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Ja — und eine der wichtigsten Botschaften im Employer Branding ist: Es geht nicht darum, das größte Budget zu haben, sondern das klarste Bild von sich selbst. Auch mit begrenzten Mitteln lässt sich eine überzeugende Arbeitgebermarke aufbauen. Wichtig ist, dass man weiß, wofür das Unternehmen steht, wen man ansprechen möchte und wie sich das konsistent kommunizieren lässt. Employer Branding ist ohnehin kein begrenztes Projekt, sondern ein kontinuierlicher Prozess. Der beste Zeitpunkt anzufangen ist jetzt.</p>
+        </details>
+
+        <details>
+            <summary><span>Was ist der Unterschied zwischen Employer Branding und Personalmarketing?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Der Unterschied lässt sich bspw. mit dem zwischen PR und Marketing vergleichen. Employer Branding ist die strategische Basis: Es schafft Identität, Haltung und Wiedererkennbarkeit als Arbeitgeber und wirkt langfristig. Personalmarketing baut darauf auf und verfolgt konkrete, oft kurzfristigere Ziele: offene Stellen besetzen, bestimmte Zielgruppen ansprechen, Recruiting-Kampagnen umsetzen.</p>
+        </details>
+
+        <details>
+            <summary><span>Was ist eine EVP — und braucht mein Unternehmen wirklich eine?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">EVP steht für Employer Value Proposition und ist das, was ein Unternehmen als Arbeitgeber ausmacht und von anderen unterscheidet. Sie fasst zusammen, was Mitarbeitende bekommen, bspw. die Kultur, den Führungsstil oder Sinnstiftendes. Die EVP muss nicht immer direkt nach außen kommuniziert werden — aber sie sollte wie ein roter Faden durch alle Maßnahmen der Arbeitgeberkommunikation ziehen, von der Stellenanzeige bis zum Offboarding. Ohne EVP kommunizieren viele Unternehmen austauschbar. Eine klare Employer Value Proposition gibt Orientierung und sorgt für Wiedererkennbarkeit.</p>
+        </details>
+
+        <details>
+            <summary><span>Was macht eine gute Stellenanzeige aus — und warum scheitern so viele?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Die meisten Stellenanzeigen scheitern, weil sie Anforderungslisten sind statt Angebote. Eine gute Stellenanzeige denkt von der Zielgruppe her: Welche Sprache spricht sie? Was motiviert sie? Was unterscheidet diesen Job von anderen? Dazu kommt technische Sorgfalt — die richtigen Suchbegriffe für SEO und GEO, eine klare Struktur und Inhalte, die wirklich aussagekräftig sind. Das Ergebnis: bessere Passungen.</p>
+        </details>
+
+        <details>
+            <summary><span>Wie lange dauert es, eine Arbeitgebermarke aufzubauen?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Das hängt stark davon ab, was bereits vorhanden ist. Grundelemente wie EVP, Karrierewebsite und Stellenanzeigen-Templates lassen sich in wenigen Monaten entwickeln. Employer Branding ist aber kein Projekt mit Abschlussdatum — es ist ein laufender Prozess, der sich mit dem Unternehmen weiterentwickelt. Der beste Ansatz: früh starten, konsequent bleiben und Schritt für Schritt aufbauen. Wer auf den perfekten Moment wartet, wartet zu lange.</p>
+        </details>
+
+        <details>
+            <summary><span>Was macht eine gute Content-Strategie aus?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Eine gute Content-Strategie beginnt nicht mit der Frage „Was posten wir?" sondern „Welches Ziel verfolgen wir — und für wen?" Erst dann kommen Themenplanung, Kanalwahl und Formate. Entscheidend ist die Passung: zur Marke, zur Zielgruppe und zur Plattform. Dazu kommen Auffindbarkeit, inhaltliche Relevanz und eine klare Redaktionslogik.</p>
+        </details>
+
+        <details>
+            <summary><span>Kann ich einzelne Projekte beauftragen oder nur längere Zusammenarbeiten?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Beides ist möglich. Für einen klar definierten Einstieg gibt es Festpreisangebote mit definiertem Scope — vom LinkedIn-Profil-Check bis zur Employer-Branding-Analyse. Für laufende Zusammenarbeit bieten sich Retainer-Modelle an. Welches Format passt, klären wir am besten im persönlichen Gespräch.</p>
+        </details>
+
+        <details>
+            <summary><span>Ist KI-generierter Content noch authentisch — oder merkt man das?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Es kommt darauf an, wie KI eingesetzt wird. KI allein produziert generischen Output, oft sogar mit falschen Tatsachen — die Stärke entsteht, wenn menschliche Expertise und KI zusammenarbeiten. Dann entstehen Inhalte mit hohem Tempo und hoher Qualität. Studien zeigen bereits, dass Menschen offensichtlich KI-generierten Content zunehmend ablehnen. KI ist ein Werkzeug und als solches kann es auch nur in den Händen von Expert*innen wirken, wie es soll. So kann Content effizienter produziert werden und bleibt dabei authentisch und menschlich veredelt.</p>
+        </details>
+
+        <details>
+            <summary><span>Kann KI wirklich professionellen Bild- und Videocontent erstellen — oder sieht man das immer?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Die Qualität generativer KI-Tools hat sich in kurzer Zeit dramatisch verbessert. Mit den richtigen Tools, für Bilder etwa Midjourney oder Nano Banana Pro, für Video etwa Veo oder Kling, entstehen heute Ergebnisse, die sich von klassisch produziertem Content kaum unterscheiden. Entscheidend ist nicht das Tool, sondern das Briefing. Wer präzise promptet, konsistente Stile definiert und ein Gespür für Bildsprache mitbringt, produziert Inhalte auf professionellem Niveau — schneller und kosteneffizienter als klassische Produktionen.</p>
+        </details>
+
+        <details>
+            <summary><span>Für welche Inhalte eignet sich KI-generierter Bild- und Videocontent besonders?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Überall dort, wo Tempo, Skalierbarkeit oder Kosten entscheidend sind: bspw. Social-Media-Content, Produktvisualisierungen, Lifestyle- oder Fashion-Inhalte. Für authentischen Dokumentarcharakter oder echte Personen bleiben klassische Produktionen die bessere Wahl.</p>
+        </details>
+
+        <details>
+            <summary><span>Wie setze ich KI sinnvoll in meiner Unternehmenskommunikation ein, ohne die Kontrolle zu verlieren?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Die KI-Nutzung sollte immer zur eigenen Kommunikationsstrategie passen. Der Einstieg gelingt am besten mit einem klaren Regelwerk: Welche Tools sind für welche Zwecke geeignet? Was darf automatisiert werden, was nicht? Wie sehen Qualitätssicherung und Freigabeprozesse aus? Wer diese Fragen vorab klärt, gewinnt Effizienz ohne Kontrollverlust.</p>
+        </details>
+
+        <details>
+            <summary><span>Brauche ich als Führungskraft wirklich eine eigene LinkedIn-Präsenz?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Ist es zwingend notwendig, auf LinkedIn aktiv zu sein? Nein. Ist es sinnvoll? Absolut. Menschen interessieren sich für Menschen. Führungskräfte mit aktiver LinkedIn-Präsenz stärken nicht nur ihre persönliche Sichtbarkeit, sondern auch die Reputation ihres Unternehmens: als Arbeitgeber, als Geschäftspartner, als Branchenstimme. Ein ungenutzter Kanal ist verpasstes Potenzial in alle Richtungen.</p>
+        </details>
+
+        <details>
+            <summary><span>Wie gewinne ich meine Mitarbeitenden als Corporate Influencer?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Der häufigste Fehler: Mitarbeitende werden gebeten zu posten, ohne zu wissen warum und wie. Wichtig ist Transparenz über Ziele und Nutzen, praktische Unterstützung beim Einstieg, etwa durch Workshops oder Content-Ideen, und vor allem Freiwilligkeit. Corporate Influencer, die aus eigener Überzeugung posten, sind glaubwürdiger und nachhaltiger als solche, die es müssen.</p>
+        </details>
+
+        <details>
+            <summary><span>Wie läuft LinkedIn-Ghostwriting konkret ab?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Am Anfang steht ein Briefing: Gemeinsam besprechen wir Ziele, Tonalität, Stil und mögliche Themen. Dann entstehen drei fertige Posts, die vor Veröffentlichung nochmal gemeinsam reviewed werden. So entwickelt sich nach und nach eine Stimme, die authentisch klingt, auch wenn ich die Worte schreibe. Das Paket ist auf Wunsch als monatlicher Retainer verlängerbar.</p>
+        </details>
+
+        <details>
+            <summary><span>Was sind die Vorteile, mit einer Freelancerin statt mit einer Agentur zu arbeiten?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Der offensichtliche Unterschied: Freelancer sind oft schneller verfügbar und wirtschaftlicher. Der wichtigere: Sie sprechen direkt mit der Person, die Ihre Kommunikation tatsächlich entwickelt — nicht mit einem Account Manager, der Briefings weitergibt. Jedes Projekt wird von mir persönlich bearbeitet, mit der Erfahrung aus über zehn Jahren Agenturarbeit. Kurze Wege, direkte Kommunikation, treffsichere Ergebnisse — damit punkte ich.</p>
+        </details>
+
+        <details>
+            <summary><span>Lohnt sich TikTok auch für B2B-Unternehmen?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Häufiger als man denkt: ja. Entscheidend ist, ob die Zielgruppe dort anzutreffen ist und ob der Content gut genug ist. TikTok belohnt Relevanz, nicht Reichweite oder Budget. Branchen wie Handwerk, Gesundheit oder Bildung funktionieren auf TikTok oft besser als erwartet. Der Einstieg lohnt sich zumindest als Test.</p>
+        </details>
+
+        <details>
+            <summary><span>Arbeiten Sie remote oder auch vor Ort?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Grundsätzlich remote — für die meisten Projekte ist das vollkommen ausreichend. Auf Anfrage sind aber auch gern begrenzte Präsenzphasen vor Ort möglich, weltweit.</p>
+        </details>
+
+        <details>
+            <summary><span>Arbeiten Sie in Stundensätzen oder auch per Retainer?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Beides. Für klar definierte Einzelprojekte gibt es Stundensätze und Festpreise. Für laufende Zusammenarbeit — etwa regelmäßigen Content, LinkedIn-Ghostwriting oder die Begleitung eines längeren Kommunikationsprojekts — bieten sich Retainer-Modelle an, die Planungssicherheit für beide Seiten schaffen.</p>
+        </details>
+
+        <details>
+            <summary><span>Wie messe ich, ob meine Social-Media-Strategie funktioniert?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Zuerst die Frage beantworten: Was soll die Strategie leisten? Reichweite, Engagement, Follower-Wachstum, Leadgenerierung — je nach Ziel sind andere Kennzahlen relevant. Sinnvoll ist, vorab zwei bis drei KPIs zu definieren, regelmäßig auszuwerten und die Social-Media-Strategie darauf anzupassen.</p>
+        </details>
+
+        <details>
+            <summary><span>Wann macht es Sinn, meine Marke neu zu positionieren?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Wenn die Positionierung nicht mehr zur Realität des Unternehmens passt, bspw. nach starkem Wachstum, einer strategischen Neuausrichtung oder dem Eintritt in neue Märkte. Auch wenn Kund*innen oder Bewerber*innen nicht klar benennen können, wofür ein Unternehmen steht, ist das ein deutliches Signal. Eine Neupositionierung ist kein vollständiges Rebranding — es geht darum, das Wesentliche zu schärfen und konsequent nach innen wie außen zu kommunizieren.</p>
+        </details>
+
+        <details>
+            <summary><span>Was ist der Unterschied zwischen PR und Content Marketing?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">PR zielt darauf ab, Glaubwürdigkeit durch Dritte aufzubauen: durch Medienberichte, Fachartikel oder redaktionelle Erwähnungen. Content Marketing schafft Sichtbarkeit über eigene Kanäle. Beide verfolgen ähnliche Ziele wie Image, Vertrauen und Reichweite, nutzen aber unterschiedliche Hebel. Am stärksten wirken sie zusammen.</p>
+        </details>
+
+        <details>
+            <summary><span>Ich habe noch keine Kommunikationsstrategie. Wo fange ich an?</span><span class="faq-indicator"><span class="faq-plus">+</span><span class="faq-minus">−</span></span></summary>
+            <p class="faq-answer">Mit Klarheit darüber, wer man ist, für wen man kommuniziert und was man erreichen möchte. Bevor Kanäle und Formate entschieden werden, braucht es diese Basis: Positionierung, Zielgruppe, Tonalität. Von dort aus lässt sich alles ableiten. Ein guter Einstieg ist oft ein Kommunikations-Sparring, in dem genau das in kurzer Zeit herausgearbeitet wird.</p>
+        </details>
+
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Kann ich auch als KMU oder Start-up mit begrenztem Budget meine Arbeitgebermarke aufbauen?","acceptedAnswer":{"@type":"Answer","text":"Ja — und eine der wichtigsten Botschaften im Employer Branding ist: Es geht nicht darum, das größte Budget zu haben, sondern das klarste Bild von sich selbst. Auch mit begrenzten Mitteln lässt sich eine überzeugende Arbeitgebermarke aufbauen. Wichtig ist, dass man weiß, wofür das Unternehmen steht, wen man ansprechen möchte und wie sich das konsistent kommunizieren lässt. Employer Branding ist ohnehin kein begrenztes Projekt, sondern ein kontinuierlicher Prozess. Der beste Zeitpunkt anzufangen ist jetzt."}},
+    {"@type":"Question","name":"Was ist der Unterschied zwischen Employer Branding und Personalmarketing?","acceptedAnswer":{"@type":"Answer","text":"Der Unterschied lässt sich bspw. mit dem zwischen PR und Marketing vergleichen. Employer Branding ist die strategische Basis: Es schafft Identität, Haltung und Wiedererkennbarkeit als Arbeitgeber und wirkt langfristig. Personalmarketing baut darauf auf und verfolgt konkrete, oft kurzfristigere Ziele: offene Stellen besetzen, bestimmte Zielgruppen ansprechen, Recruiting-Kampagnen umsetzen."}},
+    {"@type":"Question","name":"Was ist eine EVP — und braucht mein Unternehmen wirklich eine?","acceptedAnswer":{"@type":"Answer","text":"EVP steht für Employer Value Proposition und ist das, was ein Unternehmen als Arbeitgeber ausmacht und von anderen unterscheidet. Sie fasst zusammen, was Mitarbeitende bekommen, bspw. die Kultur, den Führungsstil oder Sinnstiftendes. Die EVP muss nicht immer direkt nach außen kommuniziert werden — aber sie sollte wie ein roter Faden durch alle Maßnahmen der Arbeitgeberkommunikation ziehen, von der Stellenanzeige bis zum Offboarding. Ohne EVP kommunizieren viele Unternehmen austauschbar. Eine klare Employer Value Proposition gibt Orientierung und sorgt für Wiedererkennbarkeit."}},
+    {"@type":"Question","name":"Was macht eine gute Stellenanzeige aus — und warum scheitern so viele?","acceptedAnswer":{"@type":"Answer","text":"Die meisten Stellenanzeigen scheitern, weil sie Anforderungslisten sind statt Angebote. Eine gute Stellenanzeige denkt von der Zielgruppe her: Welche Sprache spricht sie? Was motiviert sie? Was unterscheidet diesen Job von anderen? Dazu kommt technische Sorgfalt — die richtigen Suchbegriffe für SEO und GEO, eine klare Struktur und Inhalte, die wirklich aussagekräftig sind. Das Ergebnis: bessere Passungen."}},
+    {"@type":"Question","name":"Wie lange dauert es, eine Arbeitgebermarke aufzubauen?","acceptedAnswer":{"@type":"Answer","text":"Das hängt stark davon ab, was bereits vorhanden ist. Grundelemente wie EVP, Karrierewebsite und Stellenanzeigen-Templates lassen sich in wenigen Monaten entwickeln. Employer Branding ist aber kein Projekt mit Abschlussdatum — es ist ein laufender Prozess, der sich mit dem Unternehmen weiterentwickelt. Der beste Ansatz: früh starten, konsequent bleiben und Schritt für Schritt aufbauen. Wer auf den perfekten Moment wartet, wartet zu lange."}},
+    {"@type":"Question","name":"Was macht eine gute Content-Strategie aus?","acceptedAnswer":{"@type":"Answer","text":"Eine gute Content-Strategie beginnt nicht mit der Frage „Was posten wir?" sondern „Welches Ziel verfolgen wir — und für wen?" Erst dann kommen Themenplanung, Kanalwahl und Formate. Entscheidend ist die Passung: zur Marke, zur Zielgruppe und zur Plattform. Dazu kommen Auffindbarkeit, inhaltliche Relevanz und eine klare Redaktionslogik."}},
+    {"@type":"Question","name":"Kann ich einzelne Projekte beauftragen oder nur längere Zusammenarbeiten?","acceptedAnswer":{"@type":"Answer","text":"Beides ist möglich. Für einen klar definierten Einstieg gibt es Festpreisangebote mit definiertem Scope — vom LinkedIn-Profil-Check bis zur Employer-Branding-Analyse. Für laufende Zusammenarbeit bieten sich Retainer-Modelle an. Welches Format passt, klären wir am besten im persönlichen Gespräch."}},
+    {"@type":"Question","name":"Ist KI-generierter Content noch authentisch — oder merkt man das?","acceptedAnswer":{"@type":"Answer","text":"Es kommt darauf an, wie KI eingesetzt wird. KI allein produziert generischen Output, oft sogar mit falschen Tatsachen — die Stärke entsteht, wenn menschliche Expertise und KI zusammenarbeiten. Dann entstehen Inhalte mit hohem Tempo und hoher Qualität. Studien zeigen bereits, dass Menschen offensichtlich KI-generierten Content zunehmend ablehnen. KI ist ein Werkzeug und als solches kann es auch nur in den Händen von Expert*innen wirken, wie es soll. So kann Content effizienter produziert werden und bleibt dabei authentisch und menschlich veredelt."}},
+    {"@type":"Question","name":"Kann KI wirklich professionellen Bild- und Videocontent erstellen — oder sieht man das immer?","acceptedAnswer":{"@type":"Answer","text":"Die Qualität generativer KI-Tools hat sich in kurzer Zeit dramatisch verbessert. Mit den richtigen Tools, für Bilder etwa Midjourney oder Nano Banana Pro, für Video etwa Veo oder Kling, entstehen heute Ergebnisse, die sich von klassisch produziertem Content kaum unterscheiden. Entscheidend ist nicht das Tool, sondern das Briefing. Wer präzise promptet, konsistente Stile definiert und ein Gespür für Bildsprache mitbringt, produziert Inhalte auf professionellem Niveau — schneller und kosteneffizienter als klassische Produktionen."}},
+    {"@type":"Question","name":"Für welche Inhalte eignet sich KI-generierter Bild- und Videocontent besonders?","acceptedAnswer":{"@type":"Answer","text":"Überall dort, wo Tempo, Skalierbarkeit oder Kosten entscheidend sind: bspw. Social-Media-Content, Produktvisualisierungen, Lifestyle- oder Fashion-Inhalte. Für authentischen Dokumentarcharakter oder echte Personen bleiben klassische Produktionen die bessere Wahl."}},
+    {"@type":"Question","name":"Wie setze ich KI sinnvoll in meiner Unternehmenskommunikation ein, ohne die Kontrolle zu verlieren?","acceptedAnswer":{"@type":"Answer","text":"Die KI-Nutzung sollte immer zur eigenen Kommunikationsstrategie passen. Der Einstieg gelingt am besten mit einem klaren Regelwerk: Welche Tools sind für welche Zwecke geeignet? Was darf automatisiert werden, was nicht? Wie sehen Qualitätssicherung und Freigabeprozesse aus? Wer diese Fragen vorab klärt, gewinnt Effizienz ohne Kontrollverlust."}},
+    {"@type":"Question","name":"Brauche ich als Führungskraft wirklich eine eigene LinkedIn-Präsenz?","acceptedAnswer":{"@type":"Answer","text":"Ist es zwingend notwendig, auf LinkedIn aktiv zu sein? Nein. Ist es sinnvoll? Absolut. Menschen interessieren sich für Menschen. Führungskräfte mit aktiver LinkedIn-Präsenz stärken nicht nur ihre persönliche Sichtbarkeit, sondern auch die Reputation ihres Unternehmens: als Arbeitgeber, als Geschäftspartner, als Branchenstimme. Ein ungenutzter Kanal ist verpasstes Potenzial in alle Richtungen."}},
+    {"@type":"Question","name":"Wie gewinne ich meine Mitarbeitenden als Corporate Influencer?","acceptedAnswer":{"@type":"Answer","text":"Der häufigste Fehler: Mitarbeitende werden gebeten zu posten, ohne zu wissen warum und wie. Wichtig ist Transparenz über Ziele und Nutzen, praktische Unterstützung beim Einstieg, etwa durch Workshops oder Content-Ideen, und vor allem Freiwilligkeit. Corporate Influencer, die aus eigener Überzeugung posten, sind glaubwürdiger und nachhaltiger als solche, die es müssen."}},
+    {"@type":"Question","name":"Wie läuft LinkedIn-Ghostwriting konkret ab?","acceptedAnswer":{"@type":"Answer","text":"Am Anfang steht ein Briefing: Gemeinsam besprechen wir Ziele, Tonalität, Stil und mögliche Themen. Dann entstehen drei fertige Posts, die vor Veröffentlichung nochmal gemeinsam reviewed werden. So entwickelt sich nach und nach eine Stimme, die authentisch klingt, auch wenn ich die Worte schreibe. Das Paket ist auf Wunsch als monatlicher Retainer verlängerbar."}},
+    {"@type":"Question","name":"Was sind die Vorteile, mit einer Freelancerin statt mit einer Agentur zu arbeiten?","acceptedAnswer":{"@type":"Answer","text":"Der offensichtliche Unterschied: Freelancer sind oft schneller verfügbar und wirtschaftlicher. Der wichtigere: Sie sprechen direkt mit der Person, die Ihre Kommunikation tatsächlich entwickelt — nicht mit einem Account Manager, der Briefings weitergibt. Jedes Projekt wird von mir persönlich bearbeitet, mit der Erfahrung aus über zehn Jahren Agenturarbeit. Kurze Wege, direkte Kommunikation, treffsichere Ergebnisse — damit punkte ich."}},
+    {"@type":"Question","name":"Lohnt sich TikTok auch für B2B-Unternehmen?","acceptedAnswer":{"@type":"Answer","text":"Häufiger als man denkt: ja. Entscheidend ist, ob die Zielgruppe dort anzutreffen ist und ob der Content gut genug ist. TikTok belohnt Relevanz, nicht Reichweite oder Budget. Branchen wie Handwerk, Gesundheit oder Bildung funktionieren auf TikTok oft besser als erwartet. Der Einstieg lohnt sich zumindest als Test."}},
+    {"@type":"Question","name":"Arbeiten Sie remote oder auch vor Ort?","acceptedAnswer":{"@type":"Answer","text":"Grundsätzlich remote — für die meisten Projekte ist das vollkommen ausreichend. Auf Anfrage sind aber auch gern begrenzte Präsenzphasen vor Ort möglich, weltweit."}},
+    {"@type":"Question","name":"Arbeiten Sie in Stundensätzen oder auch per Retainer?","acceptedAnswer":{"@type":"Answer","text":"Beides. Für klar definierte Einzelprojekte gibt es Stundensätze und Festpreise. Für laufende Zusammenarbeit — etwa regelmäßigen Content, LinkedIn-Ghostwriting oder die Begleitung eines längeren Kommunikationsprojekts — bieten sich Retainer-Modelle an, die Planungssicherheit für beide Seiten schaffen."}},
+    {"@type":"Question","name":"Wie messe ich, ob meine Social-Media-Strategie funktioniert?","acceptedAnswer":{"@type":"Answer","text":"Zuerst die Frage beantworten: Was soll die Strategie leisten? Reichweite, Engagement, Follower-Wachstum, Leadgenerierung — je nach Ziel sind andere Kennzahlen relevant. Sinnvoll ist, vorab zwei bis drei KPIs zu definieren, regelmäßig auszuwerten und die Social-Media-Strategie darauf anzupassen."}},
+    {"@type":"Question","name":"Wann macht es Sinn, meine Marke neu zu positionieren?","acceptedAnswer":{"@type":"Answer","text":"Wenn die Positionierung nicht mehr zur Realität des Unternehmens passt, bspw. nach starkem Wachstum, einer strategischen Neuausrichtung oder dem Eintritt in neue Märkte. Auch wenn Kund*innen oder Bewerber*innen nicht klar benennen können, wofür ein Unternehmen steht, ist das ein deutliches Signal. Eine Neupositionierung ist kein vollständiges Rebranding — es geht darum, das Wesentliche zu schärfen und konsequent nach innen wie außen zu kommunizieren."}},
+    {"@type":"Question","name":"Was ist der Unterschied zwischen PR und Content Marketing?","acceptedAnswer":{"@type":"Answer","text":"PR zielt darauf ab, Glaubwürdigkeit durch Dritte aufzubauen: durch Medienberichte, Fachartikel oder redaktionelle Erwähnungen. Content Marketing schafft Sichtbarkeit über eigene Kanäle. Beide verfolgen ähnliche Ziele wie Image, Vertrauen und Reichweite, nutzen aber unterschiedliche Hebel. Am stärksten wirken sie zusammen."}},
+    {"@type":"Question","name":"Ich habe noch keine Kommunikationsstrategie. Wo fange ich an?","acceptedAnswer":{"@type":"Answer","text":"Mit Klarheit darüber, wer man ist, für wen man kommuniziert und was man erreichen möchte. Bevor Kanäle und Formate entschieden werden, braucht es diese Basis: Positionierung, Zielgruppe, Tonalität. Von dort aus lässt sich alles ableiten. Ein guter Einstieg ist oft ein Kommunikations-Sparring, in dem genau das in kurzer Zeit herausgearbeitet wird."}}
+  ]
+}
+</script>
+
+<div class="sec-rule"></div>
+
 <!-- ─── CONTACT ─── -->
 <section id="contact">
-    <div class="section-eyebrow"><span class="num">[04]</span> Kontakt</div>
+    <div class="section-eyebrow"><span class="num">[06]</span> Kontakt</div>
     <div class="contact-grid">
         <div>
             <h2 class="contact-title">Lassen Sie<br>uns sprechen.</h2>
@@ -1237,7 +1755,7 @@
         const nextBtn = document.getElementById('projNext');
         const fill = document.getElementById('projectProgressFill');
         const carousel = document.getElementById('projectsCarousel');
-        const TOTAL = 5;
+        const TOTAL = 7;
         const INTERVAL = 6500;
         let current = 0;
         let rafId = null;
