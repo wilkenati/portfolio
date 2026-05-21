@@ -448,10 +448,13 @@
         .service-item {
             display: grid;
             grid-template-columns: 1fr 1.65fr;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "left desc"
+                "left tags";
             gap: 0 48px;
             padding: 36px 0;
             border-bottom: 1px solid #A8A49C;
-            align-items: start;
             cursor: default;
         }
 
@@ -460,9 +463,10 @@
         }
 
         .service-left {
+            grid-area: left;
             display: flex;
             flex-direction: column;
-            align-self: start;
+            justify-content: center;
         }
 
         .service-num {
@@ -487,19 +491,22 @@
         }
 
         .service-desc {
+            grid-area: desc;
             font-size: 14px;
             font-weight: 300;
             color: #555250;
             line-height: 1.8;
             margin-top: 0;
-            align-self: start;
+            align-self: end;
         }
 
         .service-tags {
+            grid-area: tags;
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 20px;
+            margin-top: 16px;
+            align-self: start;
         }
 
         .service-tag {
@@ -536,14 +543,14 @@
         }
 
         .project-left {
-            padding: 52px 0 52px;
+            padding: 40px 0 40px;
             display: flex;
             flex-direction: column;
             border-right: 1px solid var(--border);
             padding-right: 48px;
-            min-height: 420px;
+            min-height: 0;
             justify-content: space-between;
-            gap: 28px;
+            gap: 24px;
         }
 
         .project-thumb {
@@ -613,7 +620,7 @@
         }
 
         .project-right {
-            padding: 52px 0;
+            padding: 40px 0;
         }
 
         .project-block-label {
@@ -771,11 +778,11 @@
         .faq-list details summary::-webkit-details-marker { display: none; }
 
         .faq-indicator {
-            font-size: 22px;
+            font-size: 32px;
             font-weight: 300;
             color: var(--blue);
             flex-shrink: 0;
-            line-height: 1.4;
+            line-height: 1.2;
         }
 
         .faq-plus { display: inline; }
@@ -969,7 +976,7 @@
             .about-grid { grid-template-columns: 1fr; gap: 48px; }
             .about-aside { position: static; display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; }
             .aside-photo, .aside-photo-fallback { aspect-ratio: auto; height: 260px; }
-            .service-item { grid-template-columns: 1fr; gap: 16px; }
+            .service-item { grid-template-columns: 1fr; grid-template-areas: "left" "desc" "tags"; gap: 16px; }
             .sec-rule { margin: 0 24px; }
             .contact-grid { grid-template-columns: 1fr; gap: 48px; }
             section { padding: 80px 24px; }
@@ -996,16 +1003,13 @@
 <!-- ─── HERO ─── -->
 <section id="home" style="padding: 0; min-height: 100vh;" class="hero">
     <div class="hero-left">
-        <p class="hero-label">Kommunikations- & Markenstrategin</p>
+        <p class="hero-label">Kommunikationsexpertin</p>
         <h1 class="hero-title">
-            Starke<br>
-            Marken<br>
-            brauchen<br>
-            <em>klare</em> Worte.
+            Starke Marken.<br>
+            <em>Klare Worte.</em>
         </h1>
         <p class="hero-sub">
-            Mit über 10 Jahren Agenturerfahrung entwickle ich Markenkerne,
-            übersetze sie in glaubwürdige Botschaften — und sorge dafür, dass sie wirken.
+            Mit über 10 Jahren Agenturerfahrung entwickle ich Kommunikationsstrategien und Content, die wirken — von Employer Branding über C-Level-Kommunikation bis hin zu Storytelling auf Social Media.
         </p>
         <a href="#contact" class="hero-cta">
             Projekt besprechen
@@ -1102,7 +1106,7 @@
     <h2 class="section-title"><em>Strategie</em> trifft<br>Handwerk.</h2>
     <div class="about-grid">
         <div class="about-body">
-            <p>Ich bin Natalie Wilke — Kommunikations-, Content- und Markenstrategin mit über 10 Jahren Agenturerfahrung. In dieser Zeit habe ich Unternehmen unterschiedlichster Branchen dabei geholfen, ihre Stärken auf den Punkt zu bringen: durch klare Positionierungen, wirksame Botschaften und Kommunikation, die wirkt.</p>
+            <p>Ich bin Natalie Wilke — Kommunikations-, Content-, Marketing- und Employer-Branding-Strategin mit über 10 Jahren Agenturerfahrung. In dieser Zeit habe ich Unternehmen unterschiedlichster Branchen dabei geholfen, ihre Stärken auf den Punkt zu bringen: durch klare Positionierungen, treffsichere Botschaften und Kommunikation, die wirkt.</p>
             <p>Meine Basis: ein Masterstudium in Medienwissenschaften, ein Volontariat in der Digitalredaktion der renommierten PR- und Werbeagentur fischerAppelt und rund ein Jahrzehnt auf Agenturseite — von der Junior-Beraterin bis zur Head of Employer Branding &amp; Creative Strategy.</p>
             <p>Ich denke konzeptionell, schreibe präzise und bringe ein echtes Gespür für Sprache, Zielgruppen und Geschichten mit. Stillstand ist nicht mein Ding: Mit 4DayJobs habe ich seinerzeit Deutschlands erste Jobbörse für die Vier-Tage-Woche mitgegründet. Und mit „Season Within" habe ich eine Female-Health-App komplett eigenständig konzipiert, entwickelt und im Apple App Store gelauncht — vom ersten Entwurf bis zur fertigen App, ohne externes Development-Team.</p>
             <p>Generative KI begleitet meine Arbeit seit sie verfügbar ist — nicht als Ersatz für handwerkliches Können, sondern als Werkzeug, das ich dort einsetze, wo es Prozesse schärft und Ergebnisse verbessert. Meinen Antrieb, immer weiterzulernen, unterstreichen fünf IHK-Weiterbildungen aus 2025 — in angewandter KI-Transformation, agilem Projektmanagement, Change Management, Datenanalyse und agiler Führung.</p>
@@ -1117,6 +1121,10 @@
                  onerror="this.style.display='none'; document.getElementById('aside-fallback').style.display='flex'">
             <div id="aside-fallback" class="aside-photo-fallback" style="display:none;">Foto</div>
             <div class="credentials">
+                <div class="credential">
+                    <div class="credential-title">Wohnort &amp; Heimathafen</div>
+                    <div class="credential-sub">Hamburg</div>
+                </div>
                 <div class="credential">
                     <div class="credential-title">Master Medienwissenschaften</div>
                     <div class="credential-sub">Hochschule für Bildende Künste Braunschweig</div>
@@ -1156,7 +1164,7 @@
                 <div class="service-num">01</div>
                 <h3 class="service-title">Content-Strategie &amp; Redaktion</h3>
             </div>
-            <p class="service-desc">Guter Content entsteht nicht durch mehr Worte, sondern durch die richtigen. Ich entwickle Content-Strategien, die auf klaren Zielsetzungen, relevanten Themen und einer durchdachten Kanallogik basieren — und setze sie um. Von der Themenstrategie über Storytelling bis hin zur kanalübergreifenden Distribution: Ich denke an das gewünschte Ergebnis – von der Image-Verbesserung bis zu einer Conversion – und stelle sicher, dass der Inhalt seine spezifische Aufgabe erfüllt. Ob Website, Anzeigen, Social Media, Blog, Intranet, Newsletter oder Unternehmenskommunikation — ich schreibe präzise, in der richtigen Tonalität und mit echtem Gespür dafür, was wirkt.</p>
+            <p class="service-desc">Guter Content entsteht nicht durch mehr Worte, sondern durch die richtigen. Ich entwickle Content-Strategien, die auf klaren Zielsetzungen, relevanten Themen sowie einer durchdachten Kanallogik basieren — und setze diese um. Von der Themenstrategie über Storytelling bis hin zur kanalübergreifenden Distribution: Ich fokussiere auf das gewünschte Ergebnis wie eine Image-Verbesserung oder Conversion. Dabei schreibe ich präzise, in der richtigen Tonalität und mit echtem Gespür dafür, was auf Websites, in Social Media und Co. ankommt.</p>
             <div class="service-tags">
                 <span class="service-tag">Texterstellung</span>
                 <span class="service-tag">Social-Media-Content</span>
@@ -1169,7 +1177,7 @@
                 <div class="service-num">02</div>
                 <h3 class="service-title">Markenkommunikation &amp; Positionierung</h3>
             </div>
-            <p class="service-desc">Die stärksten Marken wissen nicht nur, was sie tun, sondern auch warum. Ich entwickle Markenkerne, Claims und Leitideen, die das Wesentliche auf den Punkt bringen — und daraus eine konsistente Kommunikation ableiten, die intern wie extern funktioniert. Das erarbeite ich eng mit meinen Auftraggebenden zusammen. Das Ergebnis: eine Positionierung, die trägt — über alle Kanäle und Zielgruppen hinweg.</p>
+            <p class="service-desc">Die stärksten Marken wissen nicht nur, was sie tun, sondern auch warum. Ich entwickle Markenkerne, Claims und Leitideen, die das Wesentliche auf den Punkt bringen — und daraus eine konsistente Kommunikation ableiten, die intern wie extern funktioniert. All das erarbeite ich eng mit meinen Auftraggebenden zusammen. Das Ergebnis ist eine Positionierung, die trägt — über alle Kanäle und Zielgruppen hinweg.</p>
             <div class="service-tags">
                 <span class="service-tag">Markenstrategie</span>
                 <span class="service-tag">Claim-Entwicklung</span>
@@ -1182,7 +1190,7 @@
                 <div class="service-num">03</div>
                 <h3 class="service-title">Employer Branding &amp; Personalmarketing</h3>
             </div>
-            <p class="service-desc">Gutes Employer Branding beginnt nicht mit einer Kampagne, sondern mit einer ehrlichen Antwort auf die Frage: Wofür stehen wir eigentlich? Ich entwickle Employer-Branding-Strategien und Personalmarketing-Konzepte, die nicht auf Hochglanz setzen, sondern auf Glaubwürdigkeit — von der EVP-Entwicklung über Kampagnenkonzeption bis zur kanalübergreifenden Umsetzung. Mit fast einem Jahrzehnt Erfahrung in der Beratung von Unternehmen unterschiedlichster Branchen und Größen weiß ich, wie Arbeitgebermarken entstehen, die intern gelebt und extern wahrgenommen werden. Das Ergebnis: Arbeitgeberkommunikation, die überzeugt.</p>
+            <p class="service-desc">Gutes Employer Branding beginnt nicht mit einer Kampagne, sondern mit einer ehrlichen Antwort auf die Frage: Wofür stehen wir eigentlich? Ich entwickle Employer-Branding-Strategien und Personalmarketing-Konzepte, die nicht auf Hochglanz setzen, sondern auf Glaubwürdigkeit — von der EVP-Entwicklung über Kampagnenkonzeption bis zur kanalübergreifenden Umsetzung. Mit fast einem Jahrzehnt Erfahrung in der Beratung von Unternehmen unterschiedlichster Branchen und Größen weiß ich, wie Arbeitgebermarken entstehen, die intern gelebt und extern wahrgenommen werden. Das Ergebnis: richtig überzeugende Arbeitgeberkommunikation.</p>
             <div class="service-tags">
                 <span class="service-tag">Employer-Branding-Analysen</span>
                 <span class="service-tag">EVP-Entwicklung</span>
@@ -1195,7 +1203,7 @@
                 <div class="service-num">04</div>
                 <h3 class="service-title">Kommunikationsberatung &amp; Projektleitung</h3>
             </div>
-            <p class="service-desc">Eine Strategie ist nur so gut wie ihre Umsetzung. Ich begleite Projekte von der ersten Idee bis zum Launch — strukturiert, lösungsorientiert und mit dem Blick fürs Wesentliche. Mit langjähriger Erfahrung in der Steuerung komplexer Kommunikationsprojekte auf Agenturseite bringe ich sowohl die konzeptionelle Tiefe als auch die operative Verlässlichkeit mit, um anspruchsvolle Projekte zum Erfolg zu führen. Dabei bin ich es gewohnt, mit unterschiedlichen Stakeholdern, Timings und Anforderungen zu jonglieren — ohne dabei den roten Faden zu verlieren. Dabei lege ich Wert auf einen engen Draht zu meinen Auftraggebenden — weil gute Ergebnisse aus gutem Austausch entstehen.</p>
+            <p class="service-desc">Eine Strategie ist nur so gut wie ihre Umsetzung. Ich begleite Projekte von der ersten Idee bis zum Launch — strukturiert, lösungsorientiert und mit dem Blick fürs Wesentliche. Mit langjähriger Erfahrung in der Steuerung komplexer Kommunikationsprojekte auf Agenturseite bringe ich sowohl die konzeptionelle Tiefe als auch die operative Verlässlichkeit mit, um anspruchsvolle Projekte zum Erfolg zu führen. Dabei bin ich es gewohnt, mit unterschiedlichen Stakeholdern, Timings und Anforderungen zu jonglieren — ohne dabei den roten Faden zu verlieren. Sehr wichtig ist mir auch ein enger Draht zu meinen Auftraggebenden, denn gute Ergebnisse entstehen aus gutem Austausch.</p>
             <div class="service-tags">
                 <span class="service-tag">Kommunikationsberatung</span>
                 <span class="service-tag">Projektsteuerung</span>
@@ -1208,7 +1216,7 @@
                 <div class="service-num">05</div>
                 <h3 class="service-title">PR, Storytelling &amp; Personal Branding</h3>
             </div>
-            <p class="service-desc">Gute Geschichten können vor allem eins: emotional bewegen. Ich entwickle Storylines, Narrative und redaktionelle Konzepte — ob Pressemitteilung, Fachartikel oder Content-Serie. Das gilt auch für Personal Brands. Ich unterstütze bspw. Führungskräfte und Selbstständige dabei, ihre Expertise sichtbar zu machen — mit klarer Positionierung, konsistenter Kommunikation und Inhalten, die ihre Stimme tragen. Dafür bringe ich u. a. langjährige Erfahrung in der strategischen Kommunikation, ein Redaktionsvolontariat bei der renommierten Agentur fischerAppelt und einen Masterabschluss in Medienwissenschaften mit. Ob Ghostwriting für LinkedIn oder strategische Thought-Leadership-Begleitung: Sichtbarkeit entsteht durch den richtigen Content.</p>
+            <p class="service-desc">Gute Geschichten können vor allem eins: emotional bewegen. Ich entwickle Storylines, Narrative und redaktionelle Konzepte — ob Pressemitteilung, Fachartikel oder Content-Serie. Das gilt auch für Personal Brands. Ich unterstütze bspw. Führungskräfte und Selbstständige dabei, ihre Expertise sichtbar zu machen — mit klarer Positionierung, konsistenter Kommunikation und Inhalten, die ihre Stimme tragen. Dafür bringe ich u. a. langjährige Erfahrung in der strategischen Kommunikation, ein Redaktionsvolontariat bei der renommierten Agentur fischerAppelt und einen Masterabschluss in Medienwissenschaften mit. Ob Ghostwriting für LinkedIn oder strategische Thought-Leadership-Begleitung: Mit dem richtigen Content sorgen wir gemeinsam für mehr Sichtbarkeit.</p>
             <div class="service-tags">
                 <span class="service-tag">Pressemitteilungen</span>
                 <span class="service-tag">LinkedIn-Content</span>
@@ -1221,7 +1229,7 @@
                 <div class="service-num">06</div>
                 <h3 class="service-title">Social Media &amp; (KI)-Content-Produktion</h3>
             </div>
-            <p class="service-desc">Guter Social-Media-Content folgt keiner allgemeingültigen Zauberformel, aber echter Mehrwert für die Zielgruppe, Emotionalität und Anreize zur Interaktion sind häufig der Schlüssel zum Erfolg. Ich entwickle Social-Media-Konzepte und Inhalte für LinkedIn, Instagram, TikTok und weitere Kanäle: von der Ideenfindung und Contentplanung bis zur fertigen Umsetzung. Meine Bandbreite reicht von professioneller C-Level- und Unternehmenskommunikation auf LinkedIn bis zu KI-generiertem Fashion- und Lifestyle-Content für Instagram und TikTok — on-brand und plattformgerecht. Generative KI setze ich gezielt dort ein, wo sie Mehrwert schafft und ihr Einsatz gewünscht ist – bspw. zur Beschleunigung der Produktion, ohne dabei die Markenidentität zu verlieren.</p>
+            <p class="service-desc">Guter Social-Media-Content folgt keiner allgemeingültigen Zauberformel, aber echter Mehrwert für die Zielgruppe, Emotionalität und Anreize zur Interaktion funktionieren in der Kombination meistens am besten. Ich entwickle Social-Media-Konzepte und Inhalte für LinkedIn, Instagram, TikTok und weitere Kanäle: von der Ideenfindung und Contentplanung bis zur fertigen Umsetzung. Meine Bandbreite reicht von professioneller C-Level- und Unternehmenskommunikation auf LinkedIn bis zu KI-generiertem Fashion- und Lifestyle-Content für Instagram und TikTok — on-brand und plattformgerecht. Generative KI setze ich gezielt dort ein, wo sie Mehrwert schafft – bspw. zur Beschleunigung der Produktion, ohne dabei die Markenidentität zu verlieren.</p>
             <div class="service-tags">
                 <span class="service-tag">Social-Media-Marketing</span>
                 <span class="service-tag">KI-Content</span>
@@ -1260,7 +1268,7 @@
                 <div class="service-num">09</div>
                 <h3 class="service-title">Entrepreneurship — 4DayJobs</h3>
             </div>
-            <p class="service-desc">Die Vier-Tage-Woche nahm vor einigen Jahren deutlich an Fahrt auf. Mit 4DayJobs habe ich gemeinsam mit einem Partner seinerzeit Deutschlands erste Jobbörse speziell für Stellen mit Vier-Tage-Woche gegründet und aufgebaut. Meine Verantwortung lag dabei in jeglichen Bereichen der Unternehmensgründung: von der Strategie über die Umsetzung bis hin zur SEO-Strategie, die damals sehr erfolgreich war und 4DayJobs innerhalb kürzester Zeit auf den Top-Rängen bei Google platzierte. Die Erfahrung, ein Unternehmen von null aufzubauen, hat mein Profil um eine unternehmerische Dimension bereichert, die meine Agenturerfahrung ideal ergänzt.</p>
+            <p class="service-desc">Die Vier-Tage-Woche nahm vor einigen Jahren deutlich an Fahrt auf. Mit 4DayJobs habe ich gemeinsam mit einem Partner seinerzeit Deutschlands erste Jobbörse speziell für Stellen mit Vier-Tage-Woche gegründet und aufgebaut. Meine Verantwortung lag dabei in jeglichen Bereichen der Unternehmensgründung: vom Treffen wichtiger geschäftlicher Entscheidungen über das Branding bis hin zur SEO-Strategie, die damals sehr erfolgreich war und 4DayJobs innerhalb kürzester Zeit auf den Top-Rängen bei Google platzierte. Die Erfahrung, ein Unternehmen von null aufzubauen, hat mein Profil um eine unternehmerische Dimension bereichert, die meine Agenturerfahrung ideal ergänzt.</p>
             <div class="service-tags">
                 <span class="service-tag">SEO-Strategie</span>
                 <span class="service-tag">New Work</span>
@@ -1354,7 +1362,7 @@
 <div class="sec-rule"></div>
 
 <!-- ─── WORK ─── -->
-<section id="work">
+<section id="work" style="padding-bottom: 72px;">
     <div class="section-eyebrow"><span class="num">[04]</span> Insights &amp; Work</div>
     <h2 class="section-title">Ausgewählte<br>Projekte.</h2>
     <div class="projects-carousel" id="projectsCarousel">
@@ -1480,7 +1488,7 @@
                         <div class="project-company">AI Fashion<br>Content<br>Creation</div>
                     </div>
                     <div class="project-thumb-pair" style="aspect-ratio: 3/4;">
-                        <img src="img/projects/ai-fashion-1.jpg?v=3" alt="AI Fashion — Virtual Persona" class="project-thumb-half" style="object-position: center top;">
+                        <img src="img/projects/ai-fashion-3.jpg" alt="AI Fashion — Virtual Persona" class="project-thumb-half" style="object-position: center top;">
                         <img src="img/projects/ai-fashion-2.jpg" alt="AI Fashion — Content" class="project-thumb-half" style="object-position: center 15%;">
                     </div>
                 </div>
