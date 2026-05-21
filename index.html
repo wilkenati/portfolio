@@ -352,9 +352,13 @@
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 96px;
+            grid-template-columns: 1fr 300px;
+            gap: 72px;
             align-items: start;
+        }
+
+        #about .section-title {
+            margin-bottom: 36px;
         }
 
         .about-body p {
@@ -974,6 +978,7 @@
             .hero-left { padding: 48px 24px 64px; }
             .hero-stats { gap: 32px; }
             .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .about-left { display: contents; }
             .about-aside { position: static; display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; }
             .aside-photo, .aside-photo-fallback { aspect-ratio: auto; height: 260px; }
             .service-item { grid-template-columns: 1fr; grid-template-areas: "left" "desc" "tags"; gap: 16px; }
@@ -1009,7 +1014,7 @@
             <em>Klare Worte.</em>
         </h1>
         <p class="hero-sub">
-            Mit über 10 Jahren Agenturerfahrung entwickle ich Kommunikationsstrategien und Content, die wirken — von Employer Branding über C-Level-Kommunikation bis hin zu Storytelling auf Social Media.
+            Mit über 10 Jahren Agenturerfahrung entwickle ich Kommunikationsstrategien und Content, die wirken. Von Employer Branding über C-Level-Kommunikation bis hin zu Storytelling auf Social Media.
         </p>
         <a href="#contact" class="hero-cta">
             Projekt besprechen
@@ -1019,16 +1024,24 @@
         </a>
         <div class="hero-stats">
             <div>
+                <div class="stat-num">50+</div>
+                <div class="stat-label">Unternehmen betreut</div>
+            </div>
+            <div>
                 <div class="stat-num">10+</div>
                 <div class="stat-label">Jahre Agentur­erfahrung</div>
             </div>
             <div>
-                <div class="stat-num">2</div>
-                <div class="stat-label">eigene Gründungen</div>
-            </div>
-            <div>
                 <div class="stat-num">5</div>
                 <div class="stat-label">IHK-Weiter­bildungen 2025</div>
+            </div>
+            <div>
+                <div class="stat-num">1</div>
+                <div class="stat-label">Unternehmen mit­gegründet</div>
+            </div>
+            <div>
+                <div class="stat-num">1</div>
+                <div class="stat-label">App entwickelt</div>
             </div>
         </div>
     </div>
@@ -1102,15 +1115,17 @@
 
 <!-- ─── ABOUT ─── -->
 <section id="about">
-    <div class="section-eyebrow"><span class="num">[01]</span> Über mich</div>
-    <h2 class="section-title"><em>Strategie</em> trifft<br>Handwerk.</h2>
     <div class="about-grid">
+        <div class="about-left">
+        <div class="section-eyebrow"><span class="num">[01]</span> Über mich</div>
+        <h2 class="section-title"><em>Strategie</em> trifft<br>Handwerk.</h2>
         <div class="about-body">
             <p>Ich bin Natalie Wilke — Kommunikations-, Content-, Marketing- und Employer-Branding-Strategin mit über 10 Jahren Agenturerfahrung. In dieser Zeit habe ich Unternehmen unterschiedlichster Branchen dabei geholfen, ihre Stärken auf den Punkt zu bringen: durch klare Positionierungen, treffsichere Botschaften und Kommunikation, die wirkt.</p>
             <p>Meine Basis: ein Masterstudium in Medienwissenschaften, ein Volontariat in der Digitalredaktion der renommierten PR- und Werbeagentur fischerAppelt und rund ein Jahrzehnt auf Agenturseite — von der Junior-Beraterin bis zur Head of Employer Branding &amp; Creative Strategy.</p>
             <p>Ich denke konzeptionell, schreibe präzise und bringe ein echtes Gespür für Sprache, Zielgruppen und Geschichten mit. Stillstand ist nicht mein Ding: Mit 4DayJobs habe ich seinerzeit Deutschlands erste Jobbörse für die Vier-Tage-Woche mitgegründet. Und mit „Season Within" habe ich eine Female-Health-App komplett eigenständig konzipiert, entwickelt und im Apple App Store gelauncht — vom ersten Entwurf bis zur fertigen App, ohne externes Development-Team.</p>
             <p>Generative KI begleitet meine Arbeit seit sie verfügbar ist — nicht als Ersatz für handwerkliches Können, sondern als Werkzeug, das ich dort einsetze, wo es Prozesse schärft und Ergebnisse verbessert. Meinen Antrieb, immer weiterzulernen, unterstreichen fünf IHK-Weiterbildungen aus 2025 — in angewandter KI-Transformation, agilem Projektmanagement, Change Management, Datenanalyse und agiler Führung.</p>
             <p>Ich arbeite am liebsten dort, wo Strategie und Kreativität zusammenkommen — als Festangestellte, Beraterin oder Freelancerin.</p>
+        </div>
         </div>
         <div class="about-aside">
             <!--
