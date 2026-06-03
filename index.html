@@ -112,6 +112,31 @@
         .nav-links a:hover::after,
         .nav-links a.active::after { transform: scaleX(1); }
 
+        /* hamburger — hidden on desktop */
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            margin: -8px;
+            z-index: 110;
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--black);
+            transition: transform 0.25s ease, opacity 0.25s ease;
+            transform-origin: center;
+        }
+        .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
         /* ─── HERO ─── */
         .hero {
             min-height: 100vh;
@@ -971,17 +996,75 @@
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 960px) {
+            /* Nav */
             nav { padding: 0 24px; }
-            .nav-links { gap: 24px; }
+            .nav-hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: var(--nav-h); left: 0; right: 0; bottom: 0;
+                background: rgba(245,242,236,0.97);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+                z-index: 99;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { font-size: 18px; letter-spacing: 2px; }
+
+            /* Hero */
             .hero { grid-template-columns: 1fr; min-height: auto; }
-            .hero-right { height: 55vw; min-height: 320px; order: -1; }
+            .hero-right { height: 55vw; min-height: 280px; order: -1; }
             .hero-left { padding: 48px 24px 64px; }
-            .hero-stats { gap: 32px; }
-            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .hero-stats {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px 16px;
+            }
+            .stat-num { font-size: 30px; }
+
+            /* About */
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .about-left { display: contents; }
-            .about-aside { position: static; display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; }
-            .aside-photo, .aside-photo-fallback { aspect-ratio: auto; height: 260px; }
+            .about-aside { position: static; display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: start; }
+            .aside-photo, .aside-photo-fallback { aspect-ratio: auto; height: 220px; }
+
+            /* Services */
             .service-item { grid-template-columns: 1fr; grid-template-areas: "left" "desc" "tags"; gap: 16px; }
+            .service-num { font-size: 52px; }
+
+            /* Project carousel */
+            .project-slide { grid-template-columns: 1fr; gap: 0; }
+            .project-left {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding-right: 0;
+                padding-bottom: 32px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 24px;
+                align-items: flex-start;
+            }
+            .project-left > div:first-child { flex: 1 1 180px; }
+            .project-thumb, .project-thumb-pair {
+                flex: 0 0 140px;
+                width: 140px;
+                aspect-ratio: 3/4;
+            }
+            .project-right { padding-top: 28px; }
+            .project-company { font-size: clamp(18px, 5vw, 28px); }
+
+            /* Footer */
+            footer { flex-direction: column; gap: 6px; text-align: center; padding: 24px; }
+
+            /* Section titles — prevent overflow */
+            .section-title { font-size: clamp(28px, 8vw, 48px); letter-spacing: -1px; margin-bottom: 48px; overflow-wrap: break-word; hyphens: auto; }
+            #about .section-title { margin-bottom: 24px; }
+
+            /* Shared */
             .sec-rule { margin: 0 24px; }
             .contact-grid { grid-template-columns: 1fr; gap: 48px; }
             section { padding: 80px 24px; }
@@ -994,7 +1077,10 @@
 <!-- ─── NAVIGATION ─── -->
 <nav>
     <a href="#home" class="nav-logo">Natalie Wilke</a>
-    <ul class="nav-links">
+    <button class="nav-hamburger" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
         <li><a href="#about">Über mich</a></li>
         <li><a href="#services">Leistungen</a></li>
         <li><a href="#angebote">Angebote</a></li>
@@ -1377,7 +1463,7 @@
 <div class="sec-rule"></div>
 
 <!-- ─── WORK ─── -->
-<section id="work" style="padding-bottom: 72px;">
+<section id="work" style="padding-bottom: 56px;">
     <div class="section-eyebrow"><span class="num">[04]</span> Insights &amp; Work</div>
     <h2 class="section-title">Ausgewählte<br>Projekte.</h2>
     <div class="projects-carousel" id="projectsCarousel">
@@ -1502,9 +1588,9 @@
                         <div class="project-tag">KI-gestützte Content-Kreation</div>
                         <div class="project-company">AI Fashion<br>Content<br>Creation</div>
                     </div>
-                    <div class="project-thumb-pair" style="aspect-ratio: 3/4;">
+                    <div class="project-thumb-pair">
                         <img src="img/projects/ai-fashion-3.jpg" alt="AI Fashion — Virtual Persona" class="project-thumb-half" style="object-position: center top;">
-                        <img src="img/projects/ai-fashion-2.jpg" alt="AI Fashion — Content" class="project-thumb-half" style="object-position: center 15%;">
+                        <img src="img/projects/ai-fashion-2.jpg" alt="AI Fashion — Content" class="project-thumb-half" style="object-position: center 20%;">
                     </div>
                 </div>
                 <div class="project-right">
@@ -1769,6 +1855,26 @@
     }, { threshold: 0.25, rootMargin: '-10% 0px -10% 0px' });
 
     sections.forEach(s => io.observe(s));
+
+    // ─── Hamburger Menu ───
+    (function () {
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => {
+            const open = links.classList.toggle('open');
+            toggle.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        });
+        links.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                links.classList.remove('open');
+                toggle.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+    })();
 
     // ─── Project Carousel ───
     (function () {
