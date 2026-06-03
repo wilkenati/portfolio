@@ -1017,7 +1017,8 @@
 
             /* Hero */
             .hero { grid-template-columns: 1fr; min-height: auto; }
-            .hero-right { height: 55vw; min-height: 280px; order: -1; }
+            .hero-right { height: 72vw; min-height: 300px; order: -1; }
+            .hero-photo { object-position: center 58%; }
             .hero-left { padding: 48px 24px 64px; }
             .hero-stats {
                 display: grid;
@@ -1059,6 +1060,10 @@
 
             /* Footer */
             footer { flex-direction: column; gap: 6px; text-align: center; padding: 24px; }
+
+            /* Logo bar */
+            .logos-label { display: none; }
+            .logos-track-wrap { flex: 1; min-width: 0; }
 
             /* Section titles — prevent overflow */
             .section-title { font-size: clamp(28px, 8vw, 48px); letter-spacing: -1px; margin-bottom: 48px; overflow-wrap: break-word; hyphens: auto; }
@@ -1137,8 +1142,11 @@
             Copy your blue-wall photo to: img/natalie-bluewall.jpg
             The blue gradient below is the fallback placeholder.
         -->
-        <img src="img/natalie-bluewall.png" alt="Natalie Wilke" class="hero-photo"
-             onerror="this.style.display='none'; document.getElementById('hero-fallback').style.display='flex'">
+        <picture>
+            <source media="(max-width: 960px)" srcset="img/natalie-bluewall-preview.png">
+            <img src="img/natalie-bluewall.png" alt="Natalie Wilke" class="hero-photo"
+                 onerror="this.style.display='none'; document.getElementById('hero-fallback').style.display='flex'">
+        </picture>
         <div id="hero-fallback" class="hero-photo-fallback" style="display:none;">
             <span class="photo-tag">Foto: Natalie Wilke</span>
         </div>
